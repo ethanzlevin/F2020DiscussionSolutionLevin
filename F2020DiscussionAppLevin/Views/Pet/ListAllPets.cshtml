@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Pet>
+
+<h4>List of All Pets</h4>
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th> PetName </th> <th>Pet Type</th> <th>Pet Gender</th> <th>Pet DOB</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+        @foreach (Pet eachPet in Model)
+        {
+            <tr>
+                @if (eachPet.PetName != null)
+                {
+                <td>@eachPet.PetName</td>
+                }
+                <td>@eachPet.PetType</td>
+                <td>@eachPet.PetGender</td>
+
+                @if (eachPet.PetDOB.HasValue)
+                {
+                    <td>@eachPet.PetDOB</td>
+                }
+                else
+                {
+                    <td>@Html.DisplayText("DOB Unknown")</td>
+
+                }
+            </tr>
+        
+        
+        }
+
+
+    </tbody>
+
+</table>

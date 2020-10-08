@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZfO3+UVqEBZ2QkXO5a5MiRdG/Yf3XECX232u2x64Tla6KUoQOALwl6vnq+kODuGneCr/OTo04kJo4CCMV675Ug==",
+  "dgSpecHash": "M0Hhb+D4AIhuuiHw2JU+bBwvsb5GkohPF6H3NrAPi4m3KOZB/3Hh/y8Z/Uf7WnAzVENzDS5qxsbb0Xo+RwzWwQ==",
   "success": true,
-  "projectFilePath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
+  "projectFilePath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EthanLevin\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

@@ -19,6 +19,9 @@ namespace F2020DiscussionAppLevin.Controllers
 
             this.database = dbContext;
         }
+
+        //user interface
+        //interface - class
         public IActionResult ListAllPets()
         {
             List<Pet> allPets = database.Pet.ToList();
