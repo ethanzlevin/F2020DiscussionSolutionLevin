@@ -13,6 +13,18 @@ namespace F2020DiscussionAppLevin.Data
 
         public DbSet<VoucherRequest> VoucherRequest { get; set; }
 
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+
+        public DbSet<Client> Client { get; set; }
+
+        public DbSet<Volunteer> Volunteer { get; set; }
+
+        public DbSet<Fund> Fund { get; set; }
+
+        public DbSet<FundforVoucher> FundforVoucher { get; set; }
+
+        public DbSet<FundCriteria> FundCriteria { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

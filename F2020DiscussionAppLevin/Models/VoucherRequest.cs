@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -19,12 +20,26 @@ namespace F2020DiscussionAppLevin.Models
 
         public DateTime? DecisionDate { get; set; }
 
+        public double? RequestAmount { get; set; }
+
+        public bool? VoucherRedeemed { get; set; }
+
+
+        
+ 
         [Required]
         public int PetID { get; set; }  //serves as FK in Realational databse
 
         //object oriented connection
         [ForeignKey("PetID")]
-        public Pet RequestPet { get; set; }
+        public Pet RequestForPet { get; set; }
+
+
+        public List<FundforVoucher> FundsforVoucherRequest { get; set; }
+
+
+
+
 
         public VoucherRequest()
         {
@@ -38,7 +53,9 @@ namespace F2020DiscussionAppLevin.Models
             this.RequestStatus = requestStatus;
             this.PetID = petID;
             this.DecisionDate = null;
-
+            this.RequestAmount = null;
+            this.VoucherRedeemed = null;
+            this.FundsforVoucherRequest = new List<FundforVoucher>();
         }
     }
 }

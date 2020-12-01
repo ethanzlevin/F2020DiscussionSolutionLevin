@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj": {}
+    "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj": {
+    "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
-        "projectName": "F2020DiscussionTestLevin",
-        "projectPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
+        "projectName": "F2020DiscussionAppLevin",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
         "packagesPath": "C:\\Users\\EthanLevin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\obj\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -42,9 +42,102 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
+        "projectName": "F2020DiscussionTestLevin",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
+        "packagesPath": "C:\\Users\\EthanLevin\\.nuget\\packages\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\EthanLevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj": {
+                "projectPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.5.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.15.1, )"
             },
             "coverlet.collector": {
               "target": "Package",
@@ -70,6 +163,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YWvqTl20fZPScVQeMFrQCPf46mWqIJRW57iPn6FeTvWIb9K0rwgg9ADl7vetcwnqoQyWkcJUchkv1tU+G0V//Q==",
+  "dgSpecHash": "kNIR9AK5SQLTbxdEM1TW1TsiAlBoPjkwNOzAogi03FV5CXcKXKyrCQUH+ZIW9pRPTXdJQjEXMYU3e5E80dpmeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
+  "projectFilePath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EthanLevin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.8\\microsoft.aspnetcore.cryptography.internal.3.1.8.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.8\\microsoft.aspnetcore.cryptography.keyderivation.3.1.8.nupkg.sha512",

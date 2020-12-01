@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20201006043549_AddedVoucherRequest.cs" />
     <Compile Remove="Data\Migrations\20201006043549_AddedVoucherRequest.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201105000925_childClassAdded.cs" />
+    <Compile Remove="Data\Migrations\20201105000925_childClassAdded.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

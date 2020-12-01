@@ -1,17 +1,30 @@
-﻿@model IEnumerable<Pet>
+﻿@model IEnumerable<Pet> 
 
-<h4>List of All Pets</h4>
+<h4>List of All Pets With Their Voucher Request</h4>
 
 <table class="table table-bordered table-striped">
 
     <thead>
         <tr>
-            <th> PetName </th> <th>Pet Type</th> <th>Pet Gender</th> <th>Pet DOB</th>
+            <th>
+                Pet Name
+            </th>
+            <th>
+                Pet Type
+            </th>
+            <th>
+                Pet Gender
+            </th>
+            <th>
+                Pet DOB
+            </th>
+            <th>
+                Request Date/Status
+            </th>
         </tr>
     </thead>
 
     <tbody>
-        
         @foreach (Pet eachPet in Model)
         {
             <tr>
@@ -19,6 +32,7 @@
                 {
                 <td>@eachPet.PetName</td>
                 }
+
                 <td>@eachPet.PetType</td>
                 <td>@eachPet.PetGender</td>
 
@@ -28,12 +42,17 @@
                 }
                 else
                 {
-                    <td>@Html.DisplayText("DOB Unknown")</td>
-
+                    <td>@Html.DisplayText("Date of Birth Unknown")</td>
                 }
+                <td>
+                    @foreach (VoucherRequest eachRequest in eachPet.VoucherRequestForPet)
+                    {
+                        @(eachRequest.RequestDate.ToShortDateString()  +"" + eachRequest.RequestStatus)<br />
+
+                        }   
+                </td>
+
             </tr>
-        
-        
         }
 
 

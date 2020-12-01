@@ -8847,11 +8847,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
       "projectName": "F2020DiscussionAppLevin",
-      "projectPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
       "packagesPath": "C:\\Users\\EthanLevin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\obj\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

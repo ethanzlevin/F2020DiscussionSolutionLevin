@@ -19,12 +19,101 @@ namespace F2020DiscussionAppLevin.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.Fund", b =>
+                {
+                    b.Property<int>("FundID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("CurrentFundAmount")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("FundCriteriaID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FundName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FundType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("OriginalFundAmount")
+                        .HasColumnType("float");
+
+                    b.HasKey("FundID");
+
+                    b.HasIndex("FundCriteriaID");
+
+                    b.ToTable("Fund");
+                });
+
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.FundCriteria", b =>
+                {
+                    b.Property<int>("FundCriteriaID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClientLocatoin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FundID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PetGender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PetType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Petsize")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FundCriteriaID");
+
+                    b.HasIndex("FundID");
+
+                    b.ToTable("FundCriteria");
+                });
+
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.FundforVoucher", b =>
+                {
+                    b.Property<int>("FundforVoucherID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("AmountAssigned")
+                        .HasColumnType("float");
+
+                    b.Property<int>("FundID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RequestID")
+                        .HasColumnType("int");
+
+                    b.HasKey("FundforVoucherID");
+
+                    b.HasIndex("FundID");
+
+                    b.HasIndex("RequestID");
+
+                    b.ToTable("FundforVoucher");
+                });
+
             modelBuilder.Entity("F2020DiscussionAppLevin.Models.Pet", b =>
                 {
                     b.Property<int>("PetID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClientID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("PetDOB")
                         .HasColumnType("datetime2");
@@ -45,6 +134,8 @@ namespace F2020DiscussionAppLevin.Data.Migrations
 
                     b.HasKey("PetID");
 
+                    b.HasIndex("ClientID");
+
                     b.ToTable("Pet");
                 });
 
@@ -61,12 +152,18 @@ namespace F2020DiscussionAppLevin.Data.Migrations
                     b.Property<int>("PetID")
                         .HasColumnType("int");
 
+                    b.Property<double?>("RequestAmount")
+                        .HasColumnType("float");
+
                     b.Property<DateTime>("RequestDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RequestStatus")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("VoucherRedeemed")
+                        .HasColumnType("bit");
 
                     b.HasKey("RequestID");
 
@@ -138,6 +235,10 @@ namespace F2020DiscussionAppLevin.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -189,6 +290,8 @@ namespace F2020DiscussionAppLevin.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -275,9 +378,85 @@ namespace F2020DiscussionAppLevin.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+                });
+
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.Client", b =>
+                {
+                    b.HasBaseType("F2020DiscussionAppLevin.Models.ApplicationUser");
+
+                    b.HasDiscriminator().HasValue("Client");
+                });
+
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.Volunteer", b =>
+                {
+                    b.HasBaseType("F2020DiscussionAppLevin.Models.ApplicationUser");
+
+                    b.Property<int>("NumberofHoursWorked")
+                        .HasColumnType("int");
+
+                    b.HasDiscriminator().HasValue("Volunteer");
+                });
+
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.Fund", b =>
+                {
+                    b.HasOne("F2020DiscussionAppLevin.Models.FundCriteria", "FundCriteria")
+                        .WithMany()
+                        .HasForeignKey("FundCriteriaID");
+                });
+
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.FundCriteria", b =>
+                {
+                    b.HasOne("F2020DiscussionAppLevin.Models.Fund", "Fund")
+                        .WithMany()
+                        .HasForeignKey("FundID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.FundforVoucher", b =>
+                {
+                    b.HasOne("F2020DiscussionAppLevin.Models.Fund", "Fund")
+                        .WithMany("RequestsForFund")
+                        .HasForeignKey("FundID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("F2020DiscussionAppLevin.Models.VoucherRequest", "VoucherRequest")
+                        .WithMany("FundsforVoucherRequest")
+                        .HasForeignKey("RequestID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("F2020DiscussionAppLevin.Models.Pet", b =>
+                {
+                    b.HasOne("F2020DiscussionAppLevin.Models.Client", "Client")
+                        .WithMany("ClientPets")
+                        .HasForeignKey("ClientID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("F2020DiscussionAppLevin.Models.VoucherRequest", b =>
                 {
-                    b.HasOne("F2020DiscussionAppLevin.Models.Pet", "RequestPet")
+                    b.HasOne("F2020DiscussionAppLevin.Models.Pet", "RequestForPet")
                         .WithMany("VoucherRequestForPet")
                         .HasForeignKey("PetID")
                         .OnDelete(DeleteBehavior.Cascade)
