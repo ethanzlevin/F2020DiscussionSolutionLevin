@@ -200,6 +200,9 @@ namespace F2020DiscussionAppLevin.Data
                 database.FundforVoucher.Add(fundforVoucher);
                 database.SaveChanges();
 
+               
+
+
                 fundforVoucher = new FundforVoucher(2, 2, 10);
                 database.FundforVoucher.Add(fundforVoucher);
                 database.SaveChanges();

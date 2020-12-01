@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj": {}
+    "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj": {
+    "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
+        "projectUniqueName": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
         "projectName": "F2020DiscussionAppLevin",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
+        "projectPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
         "packagesPath": "C:\\Users\\EthanLevin\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\obj\\",
+        "outputPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -89,14 +89,14 @@
         }
       }
     },
-    "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj": {
+    "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
+        "projectUniqueName": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
         "projectName": "F2020DiscussionTestLevin",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
+        "projectPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
         "packagesPath": "C:\\Users\\EthanLevin\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\obj\\",
+        "outputPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -116,8 +116,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj"
+              "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj": {
+                "projectPath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj"
               }
             }
           }

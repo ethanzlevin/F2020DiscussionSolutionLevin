@@ -23,13 +23,15 @@ namespace F2020DiscussionAppLevin.Controllers
 
 
         //instance variable
-        private ApplicationDbContext database;
+        //private ApplicationDbContext database;     //replace dependancy on databse by using Interface obj
+        private IPetRepo iPetRepo; 
 
         // dependancy injection
-        public PetController(ApplicationDbContext dbContext)
+        public PetController(IPetRepo petRepo)
+            //ApplicationDbContext dbContext)
         {
-
-            this.database = dbContext;
+            this.iPetRepo = petRepo;
+            //this.database = dbContext;
         }
         [Authorize(Roles = "Volunteer, Administrator")]
         //Interface - Class
@@ -37,7 +39,7 @@ namespace F2020DiscussionAppLevin.Controllers
         {
 
             //Select * from Pets in sql
-            List<Pet> allPets = database.Pet.Include(p => p.VoucherRequestForPet).ToList();
+            List<Pet> allPets = iPetRepo.ListAllPets(); //database.Pet.Include(p => p.VoucherRequestForPet).ToList();
 
             return View(allPets);
         }

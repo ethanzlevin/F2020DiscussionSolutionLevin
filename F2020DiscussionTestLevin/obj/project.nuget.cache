@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tgsqdbM0ABgr/aZ4eA9kQNs0TVd83xLDG7shmlAF8vCcrKzlVpfjj8ooJsZ2UNKHajeaYcPD5mQ8TT0qmYYAqA==",
+  "dgSpecHash": "sJ9bqGllVTvHToo0Ondq+pC45nxlz/EoSrqZEiZcpC4n+YBbyWsb6AyZ3lvSS2p+lB0i6bkwu94m87XBeF9nog==",
   "success": true,
-  "projectFilePath": "\\\\Mac\\Home\\Desktop\\WVU\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
+  "projectFilePath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EthanLevin\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",

@@ -36,6 +36,7 @@ namespace F2020DiscussionAppLevin
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddTransient<IPetRepo, PetRepo>(); // add for each test
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
