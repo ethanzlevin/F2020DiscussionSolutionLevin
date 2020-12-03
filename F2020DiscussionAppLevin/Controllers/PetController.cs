@@ -43,5 +43,18 @@ namespace F2020DiscussionAppLevin.Controllers
 
             return View(allPets);
         }
+
+        public IActionResult SearchForPets(string clientID, string petType)
+        {
+            
+            List<Pet> searchList = iPetRepo.ListAllPets();
+            searchList = searchList.Where(p => p.ClientID == clientID).ToList();
+            if (!string.IsNullOrEmpty(petType))
+            {
+                searchList = searchList.Where(p => p.PetType == petType).ToList();
+
+            }
+            return View(searchList);
+        }
     }
 }

@@ -42,6 +42,84 @@ namespace F2020DiscussionTestLevin
 
         }
 
+        // four base db operations
+        //crud
+        //create (add)read (list all, search, find/get one object) update(Modify) delete(Remove)
+
+
+        [Fact]
+        public void ShouldSearchForPetsByOwner()
+        {
+            //arange
+            mockPetRepo = new Mock<IPetRepo>();
+
+            List<Pet> mockPets = CreateMockPetData();
+            mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
+
+
+            int expectedNumofPetsInList = 3;
+
+            PetController petController = new PetController(mockPetRepo.Object);
+
+            //dropdown list for owners (text =Full name of owner value = ID)
+            string clientID = "001";
+            string petType = null;
+
+
+
+            //act
+
+            ViewResult result = petController.SearchForPets(clientID, petType) as ViewResult;
+
+            List<Pet> resultModel = result.Model as List<Pet>;
+
+            int actualNumOfPetsInList = resultModel.Count;
+            // Assert
+
+            Assert.Equal(expectedNumofPetsInList, actualNumOfPetsInList);
+
+
+
+        }
+
+        [Fact]
+        public void ShouldSearchForPetsByOwnerandPetType()
+        {
+            //arange
+            mockPetRepo = new Mock<IPetRepo>();
+
+            List<Pet> mockPets = CreateMockPetData();
+            mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
+
+
+            int expectedNumofPetsInList = 1;
+
+            PetController petController = new PetController(mockPetRepo.Object);
+
+            //dropdown list for owners (text =Full name of owner value = ID)
+            string clientID = "002";
+
+            string petType = "Dog";
+
+       
+
+            ViewResult result = petController.SearchForPets(clientID, petType) as ViewResult;
+
+            List<Pet> resultModel = result.Model as List<Pet>;
+
+            int actualNumOfPetsInList = resultModel.Count;
+            // Assert
+
+            Assert.Equal(expectedNumofPetsInList, actualNumOfPetsInList);
+
+
+
+        }
+
+
+
+
+
         //helper methods
 
         public List<Pet> CreateMockPetData()
@@ -49,14 +127,26 @@ namespace F2020DiscussionTestLevin
             List<Pet> mockPets = new List<Pet>();
             string testClientid = "001";
 
-            Pet pet = new Pet("Dogtest1","Dog","Male", null, "Small", testClientid );
+            DateTime? petDOB = null;
+
+
+            Pet pet = new Pet("Dogtest1","Dog","Male", petDOB, "Small", testClientid );
             mockPets.Add(pet);
 
-            new Pet("Cattest1", "Cat", "Male", null, "Large", testClientid);
+            petDOB = new DateTime(2015, 11, 19);
+
+            pet = new Pet("Cattest1", "Cat", "Male", petDOB, "Large", testClientid);
             mockPets.Add(pet);
 
-            new Pet("Dogtest2", "Dog", "Female", null, "Medium", testClientid);
+            testClientid = "002";
+            petDOB = new DateTime(2018, 10, 15);
+
+            pet = new Pet("Dogtest2", "Dog", "Female", null, "Medium", testClientid);
             mockPets.Add(pet);
+
+            pet = new Pet("Cattest2", "Cat", "Female", null, "Medium", testClientid);
+            mockPets.Add(pet);
+
 
             return mockPets;
         }

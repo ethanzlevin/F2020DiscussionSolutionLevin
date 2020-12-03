@@ -21,6 +21,12 @@ namespace F2020DiscussionAppLevin.Models
         [Required]
         public string Address { get; set; }
 
+        public string Fullname 
+        {
+            get
+            { return (FirstName + " " + LastName); }
+        }
+
         public ApplicationUser(string firstname, string lastname, string address, string phonenumber, string email, string password)
         {
             this.FirstName = firstname;
