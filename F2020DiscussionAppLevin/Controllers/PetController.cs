@@ -44,16 +44,30 @@ namespace F2020DiscussionAppLevin.Controllers
             return View(allPets);
         }
 
-        public IActionResult SearchForPets(string clientID, string petType)
+
+        public IActionResult SearchForPetsUserInput()
+        {
+            return View();
+        }
+
+
+        public IActionResult SearchForPets(string clientID, string petType, DateTime? startDate, DateTime? endDate)
         {
             
             List<Pet> searchList = iPetRepo.ListAllPets();
-            searchList = searchList.Where(p => p.ClientID == clientID).ToList();
+            if (!string.IsNullOrEmpty(clientID))
+            { searchList = searchList.Where(p => p.ClientID == clientID).ToList(); }
             if (!string.IsNullOrEmpty(petType))
             {
                 searchList = searchList.Where(p => p.PetType == petType).ToList();
 
             }
+            if (startDate.HasValue)
+            { searchList = searchList.Where(p => p.VoucherRequestForPet.Any(vr => vr.DecisionDate >= startDate.Value.Date)  ).ToList(); }
+
+            if (endDate.HasValue)
+            { searchList = searchList.Where(p => p.VoucherRequestForPet.Any(vr => vr.DecisionDate <= endDate.Value.Date)).ToList(); }
+
             return View(searchList);
         }
     }

@@ -1,0 +1,17 @@
+﻿@model SearchForPetsViewModel
+@{
+    ViewData["Title"] = "SearchForPetsUserInput";
+}
+
+<h1>Searc hFor Pets User Input</h1>
+
+<form asp-controller="Pet" asp-action="SearchForPets" method="post">
+    <div ckass ="form-group">
+        <label> Choose Client</label>
+        <select asp-for="ClientID" asp-items="ViewBag.AllClients" class="form-control">
+
+        </select>
+
+    </div>
+</form>
+

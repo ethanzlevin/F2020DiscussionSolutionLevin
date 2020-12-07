@@ -47,7 +47,7 @@ namespace F2020DiscussionAppLevin.Models
         }
 
         // when creating constructor with paramaters you need an empty constructor
-        public VoucherRequest( string requestStatus, int petID)
+        public VoucherRequest(string requestStatus, int petID)
         {
             this.RequestDate = DateTime.Today.Date;
             this.RequestStatus = requestStatus;
@@ -56,6 +56,7 @@ namespace F2020DiscussionAppLevin.Models
             this.RequestAmount = null;
             this.VoucherRedeemed = null;
             this.FundsforVoucherRequest = new List<FundforVoucher>();
+
         }
     }
 }
