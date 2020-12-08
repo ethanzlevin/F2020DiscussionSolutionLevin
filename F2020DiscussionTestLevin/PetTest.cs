@@ -26,7 +26,7 @@ namespace F2020DiscussionTestLevin
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets);
 
-            int expectedNumofPetsInList = 3;
+            int expectedNumofPetsInList = 4;
 
             PetController petController = new PetController(mockPetRepo.Object);
             ////2. Act
@@ -57,7 +57,7 @@ namespace F2020DiscussionTestLevin
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
 
 
-            int expectedNumofPetsInList = 4;
+            int expectedNumofPetsInList = 2;
 
             PetController petController = new PetController(mockPetRepo.Object);
 
