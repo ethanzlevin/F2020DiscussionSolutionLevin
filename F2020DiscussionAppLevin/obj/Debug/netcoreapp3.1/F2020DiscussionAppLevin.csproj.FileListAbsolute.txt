@@ -427,3 +427,4 @@ C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionApp
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\F2020DiscussionAppLevin.pdb
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\F2020DiscussionAppLevin.genruntimeconfig.cache
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\Razor\Views\Pet\SearchForPetsUserInput.cshtml.g.cs
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\Razor\Views\Pet\SearchForPets.cshtml.g.cs

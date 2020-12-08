@@ -11,7 +11,7 @@ namespace F2020DiscussionAppLevin.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        //primary key is id it preexists dont created an ID prop
+        //primary key is Id it preexists dont created an ID prop
         //ID is a string
 
         [Required]

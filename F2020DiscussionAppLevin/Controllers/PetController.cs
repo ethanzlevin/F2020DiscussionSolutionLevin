@@ -6,6 +6,7 @@ using F2020DiscussionAppLevin.Data;
 using F2020DiscussionAppLevin.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace F2020DiscussionAppLevin.Controllers
@@ -47,13 +48,21 @@ namespace F2020DiscussionAppLevin.Controllers
 
         public IActionResult SearchForPetsUserInput()
         {
-            return View();
+            //Dynamic drop down list of clients from DB
+
+            ViewData["AllClients"] = new SelectList(iPetRepo.ListAllClients(), "Id" , "Fullname" ); /*list of items, value, text*/  
+
+            SearchForPetsViewModel searchForPetsViewModel = new SearchForPetsViewModel();
+
+            return View(searchForPetsViewModel);
         }
 
 
         public IActionResult SearchForPets(string clientID, string petType, DateTime? startDate, DateTime? endDate)
         {
             
+
+
             List<Pet> searchList = iPetRepo.ListAllPets();
             if (!string.IsNullOrEmpty(clientID))
             { searchList = searchList.Where(p => p.ClientID == clientID).ToList(); }
