@@ -27,7 +27,7 @@
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            @if (User.IsInRole("Volunteer") || User.IsInRole("Administrator"))
+                            @if (User.IsInRole("Employee") )
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="ListAllPets">List All Pets</a>
