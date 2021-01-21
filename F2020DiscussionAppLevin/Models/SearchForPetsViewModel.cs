@@ -17,5 +17,7 @@ namespace F2020DiscussionAppLevin.Models
 
         [DataType(DataType.Date)]
         public DateTime? EndDate { get; set; }
+
+        public List<Pet> ResultPetList { get; set; } //what is setting this data?
     }
 }

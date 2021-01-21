@@ -1,4 +1,44 @@
-﻿@model IEnumerable<Pet>
+﻿@model SearchForPetsViewModel
+@{
+    ViewData["Title"] = "SearchForPetsUserInput";
+}
+
+<h1>Search For Pets User Input</h1>
+<h6>All selections are optional</h6>
+
+<form asp-controller="Pet" asp-action="SearchForPets" method="post">
+    <div class="form-group">
+        <label> Choose Client</label>
+        <select asp-for="ClientID" asp-items="ViewBag.AllClients" class="form-control">
+            <option value="">None</option>
+        </select>
+
+    </div>
+
+    <div class="form-group">
+        <label> Pet Type</label>
+        <select asp-for="PetType" class="form-control">
+            <option value="">None</option>
+            <option value="Cat">Cat</option>
+            <option value="Dog">Dog</option>
+        </select>
+
+    </div>
+
+    <div class="form-group">
+        <label> Decision date should be after</label>
+        <input asp-for="StartDate" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label> Decision date should be before</label>
+        <input asp-for="EndDate" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search for pets</button>
+</form>
+
+
 
 <h4>Search Result</h4>
 
@@ -28,28 +68,28 @@
     </thead>
 
     <tbody>
-        @foreach (Pet eachPet in Model)
+        @foreach (Pet eachPet in Model.ResultPetList)
         {
-        <tr>
-            @if (eachPet.PetName != null)
-            {
-                <td>@eachPet.PetName</td>
-            }
-
-            <td>@eachPet.PetType</td>
-            <td>@eachPet.PetGender</td>
-            <td>
-                @if (eachPet.PetDOB.HasValue)
+            <tr>
+                @if (eachPet.PetName != null)
                 {
-                    @eachPet.PetDOB.Value.ToShortDateString();
+                    <td>@eachPet.PetName</td>
                 }
-                else
-                {
-                @Html.DisplayText("Date of Birth Unknown")
-                }
-            </td>
 
-            <td>@eachPet.Client.Fullname</td>
+                <td>@eachPet.PetType</td>
+                <td>@eachPet.PetGender</td>
+                <td>
+                    @if (eachPet.PetDOB.HasValue)
+                    {
+                        @eachPet.PetDOB.Value.ToShortDateString();
+                    }
+                    else
+                    {
+                        @Html.DisplayText("Date of Birth Unknown")
+                    }
+                </td>
+
+                <td>@eachPet.Client.Fullname</td>
 
                 <td>
                     @foreach (VoucherRequest eachRequest in eachPet.VoucherRequestForPet)
