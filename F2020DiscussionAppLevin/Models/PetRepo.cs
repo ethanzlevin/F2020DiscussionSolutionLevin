@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace F2020DiscussionAppLevin.Models
+namespace F2020DiscussionAppLevin.Models // database connection
 {
     public class PetRepo : IPetRepo
     {
