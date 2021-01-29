@@ -64,13 +64,15 @@ namespace F2020DiscussionTestLevin
 
             //dropdown list for owners (text =Full name of owner value = ID)
             string clientID = "001";
-            string petType = null;
+            
 
-
+            SearchForPetsViewModel viewModel = new SearchForPetsViewModel();
+            viewModel.ClientID = clientID;
+            
 
             //act
 
-            ViewResult result = petController.SearchForPets(clientID, petType, null, null) as ViewResult;
+            ViewResult result = petController.SearchForPets(viewModel) as ViewResult;
 
             List<Pet> resultModel = result.Model as List<Pet>;
 
@@ -102,9 +104,11 @@ namespace F2020DiscussionTestLevin
 
             string petType = "Dog";
 
-       
+            SearchForPetsViewModel viewModel = new SearchForPetsViewModel();
+            viewModel.ClientID = clientID;
+            viewModel.PetType = petType;
 
-            ViewResult result = petController.SearchForPets(clientID, petType, null, null) as ViewResult;
+            ViewResult result = petController.SearchForPets(viewModel) as ViewResult;
 
             List<Pet> resultModel = result.Model as List<Pet>;
 
@@ -137,9 +141,11 @@ namespace F2020DiscussionTestLevin
             DateTime? startDate = new DateTime(2020, 10, 1);
             DateTime? endDate = new DateTime(2020, 10, 31);
 
+            SearchForPetsViewModel viewModel = new SearchForPetsViewModel();
+            viewModel.StartDate = startDate;
+            viewModel.EndDate = endDate;
 
-
-            ViewResult result = petController.SearchForPets(null, null,startDate,endDate) as ViewResult;
+            ViewResult result = petController.SearchForPets(viewModel) as ViewResult;
 
             List<Pet> resultModel = result.Model as List<Pet>;
 
