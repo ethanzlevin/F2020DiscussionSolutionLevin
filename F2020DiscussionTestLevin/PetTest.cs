@@ -56,7 +56,7 @@ namespace F2020DiscussionTestLevin
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
-
+            mockPetRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
 
             int expectedNumofPetsInList = 2;
 
@@ -74,9 +74,9 @@ namespace F2020DiscussionTestLevin
 
             ViewResult result = petController.SearchForPets(viewModel) as ViewResult;
 
-            List<Pet> resultModel = result.Model as List<Pet>;
+            SearchForPetsViewModel resultModel = result.Model as SearchForPetsViewModel;
 
-            int actualNumOfPetsInList = resultModel.Count;
+            int actualNumOfPetsInList = resultModel.ResultPetList.Count;
             // Assert
 
             Assert.Equal(expectedNumofPetsInList, actualNumOfPetsInList);
@@ -93,7 +93,7 @@ namespace F2020DiscussionTestLevin
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
-
+            mockPetRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
 
             int expectedNumofPetsInList = 1;
 
@@ -110,9 +110,9 @@ namespace F2020DiscussionTestLevin
 
             ViewResult result = petController.SearchForPets(viewModel) as ViewResult;
 
-            List<Pet> resultModel = result.Model as List<Pet>;
+            SearchForPetsViewModel resultModel = result.Model as SearchForPetsViewModel;
 
-            int actualNumOfPetsInList = resultModel.Count;
+            int actualNumOfPetsInList = resultModel.ResultPetList.Count;
             // Assert
 
             Assert.Equal(expectedNumofPetsInList, actualNumOfPetsInList);
@@ -131,7 +131,8 @@ namespace F2020DiscussionTestLevin
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
-
+            
+            mockPetRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
 
             int expectedNumofPetsInList = 3;
 
@@ -147,9 +148,9 @@ namespace F2020DiscussionTestLevin
 
             ViewResult result = petController.SearchForPets(viewModel) as ViewResult;
 
-            List<Pet> resultModel = result.Model as List<Pet>;
+            SearchForPetsViewModel resultModel = result.Model as SearchForPetsViewModel;
 
-            int actualNumOfPetsInList = resultModel.Count;
+            int actualNumOfPetsInList = resultModel.ResultPetList.Count;
             // Assert
 
             Assert.Equal(expectedNumofPetsInList, actualNumOfPetsInList);
@@ -159,6 +160,8 @@ namespace F2020DiscussionTestLevin
         }
 
         //helper methods
+
+        
 
         public List<Pet> CreateMockPetData()
             {
