@@ -18,6 +18,8 @@ namespace F2020DiscussionAppLevin.Models
         [DataType(DataType.Date)]
         public DateTime? EndDate { get; set; }
 
+        public string FirstVisit { get; set; }
+
         public List<Pet> ResultPetList { get; set; } 
     }
 }

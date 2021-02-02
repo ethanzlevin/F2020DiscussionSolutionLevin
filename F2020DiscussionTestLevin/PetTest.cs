@@ -68,6 +68,7 @@ namespace F2020DiscussionTestLevin
 
             SearchForPetsViewModel viewModel = new SearchForPetsViewModel();
             viewModel.ClientID = clientID;
+            viewModel.FirstVisit = "No";
             
 
             //act
@@ -107,6 +108,7 @@ namespace F2020DiscussionTestLevin
             SearchForPetsViewModel viewModel = new SearchForPetsViewModel();
             viewModel.ClientID = clientID;
             viewModel.PetType = petType;
+            viewModel.FirstVisit = "No";
 
             ViewResult result = petController.SearchForPets(viewModel) as ViewResult;
 
@@ -145,6 +147,7 @@ namespace F2020DiscussionTestLevin
             SearchForPetsViewModel viewModel = new SearchForPetsViewModel();
             viewModel.StartDate = startDate;
             viewModel.EndDate = endDate;
+            viewModel.FirstVisit = "No";
 
             ViewResult result = petController.SearchForPets(viewModel) as ViewResult;
 

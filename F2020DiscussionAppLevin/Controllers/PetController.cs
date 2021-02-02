@@ -64,20 +64,30 @@ namespace F2020DiscussionAppLevin.Controllers
             ViewData["AllClients"] = new SelectList(iPetRepo.ListAllClients(), "Id", "Fullname"); /*list of items, value returned, text(what we show)*/
 
 
-            List<Pet> searchList = iPetRepo.ListAllPets();
-            if (!string.IsNullOrEmpty(viewModel.ClientID))
-            { searchList = searchList.Where(p => p.ClientID == viewModel.ClientID).ToList(); }
-            if (!string.IsNullOrEmpty(viewModel.PetType))
+            List<Pet> searchList;
+
+            if (viewModel.FirstVisit != "No")
+            { searchList = null; }
+
+            else
             {
+
+                searchList = iPetRepo.ListAllPets();
+
+                if (!string.IsNullOrEmpty(viewModel.ClientID))
+                { searchList = searchList.Where(p => p.ClientID == viewModel.ClientID).ToList(); }
+
+                if (!string.IsNullOrEmpty(viewModel.PetType))
+                {
                 searchList = searchList.Where(p => p.PetType == viewModel.PetType).ToList();
+                }
 
+                if (viewModel.StartDate.HasValue)
+                { searchList = searchList.Where(p => p.VoucherRequestForPet.Any(vr => vr.DecisionDate >= viewModel.StartDate.Value.Date)).ToList(); }
+
+                if (viewModel.EndDate.HasValue)
+                { searchList = searchList.Where(p => p.VoucherRequestForPet.Any(vr => vr.DecisionDate <= viewModel.EndDate.Value.Date)).ToList(); }
             }
-            if (viewModel.StartDate.HasValue)
-            { searchList = searchList.Where(p => p.VoucherRequestForPet.Any(vr => vr.DecisionDate >= viewModel.StartDate.Value.Date)  ).ToList(); }
-
-            if (viewModel.EndDate.HasValue)
-            { searchList = searchList.Where(p => p.VoucherRequestForPet.Any(vr => vr.DecisionDate <= viewModel.EndDate.Value.Date)).ToList(); }
-          
             //assign
             viewModel.ResultPetList = searchList;
 
