@@ -18,11 +18,7 @@ namespace F2020DiscussionAppLevin.Models // database connection
             this.database = dbContext;
         }
 
-        public List<Client> ListAllClients()
-        {
-            List<Client> clients = database.Client.ToList();
-            return clients;
-        }
+       
 
         public List<Pet> ListAllPets()
         {

@@ -14,24 +14,19 @@ namespace F2020DiscussionAppLevin.Controllers
     public class PetController : Controller
     {
 
-        //Seperation of concerns
-        //M data layer
-        //C business logic
-        // v UI
-
-        // Controller <-> Database
-        //UI (View) <-> Controller
 
 
-        //instance variable
+  
         //private ApplicationDbContext database;     //replace dependancy on databse by using Interface obj
-        private IPetRepo iPetRepo; 
+        private IPetRepo iPetRepo;
+        private IClientRepo iClientRepo;
 
         // dependancy injection
-        public PetController(IPetRepo petRepo)
+        public PetController(IPetRepo petRepo, IClientRepo clientRepo)
             //ApplicationDbContext dbContext)
         {
             this.iPetRepo = petRepo;
+            this.iClientRepo = clientRepo;
             //this.database = dbContext;
         }
         [Authorize(Roles = "Volunteer, Administrator")]
@@ -46,22 +41,12 @@ namespace F2020DiscussionAppLevin.Controllers
         }
 
 
-        //public IActionResult SearchForPetsUserInput()
-        //{
-        //    //Dynamic drop down list of clients from DB
-
-        //    ViewData["AllClients"] = new SelectList(iPetRepo.ListAllClients(), "Id" , "Fullname" ); /*list of items, value returned, text(what we show)*/  
-
-        //    SearchForPetsViewModel searchForPetsViewModel = new SearchForPetsViewModel();
-
-        //    return View(searchForPetsViewModel);
-        //}
 
 
         public IActionResult SearchForPets(SearchForPetsViewModel viewModel)/*(string clientID, string petType, DateTime? startDate, DateTime? endDate)*/
         {
 
-            ViewData["AllClients"] = new SelectList(iPetRepo.ListAllClients(), "Id", "Fullname"); /*list of items, value returned, text(what we show)*/
+            ViewData["AllClients"] = new SelectList(iClientRepo.ListAllClients(), "Id", "Fullname"); /*list of items, value returned, text(what we show)*/
 
 
             List<Pet> searchList;

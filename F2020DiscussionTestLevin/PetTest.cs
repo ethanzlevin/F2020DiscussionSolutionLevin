@@ -14,6 +14,7 @@ namespace F2020DiscussionTestLevin
         
         //instance variable 
         private Mock<IPetRepo> mockPetRepo;
+        private Mock<IClientRepo> mockClientRepo;
         [Fact]
         public void ShouldListAllPets()
         {
@@ -23,13 +24,14 @@ namespace F2020DiscussionTestLevin
             //ApplicationDbContext database = null; controller does not use databse for testing
             
             mockPetRepo = new Mock<IPetRepo>();
+            mockClientRepo = new Mock<IClientRepo>();
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets);
 
             int expectedNumofPetsInList = 4;
 
-            PetController petController = new PetController(mockPetRepo.Object);
+            PetController petController = new PetController(mockPetRepo.Object, mockClientRepo.Object);
             ////2. Act
             
             ViewResult result = petController.ListAllPets() as ViewResult;
@@ -53,14 +55,15 @@ namespace F2020DiscussionTestLevin
         {
             //arange
             mockPetRepo = new Mock<IPetRepo>();
+            mockClientRepo = new Mock<IClientRepo>();
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
-            mockPetRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
+            mockClientRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
 
             int expectedNumofPetsInList = 2;
 
-            PetController petController = new PetController(mockPetRepo.Object);
+            PetController petController = new PetController(mockPetRepo.Object, mockClientRepo.Object);
 
             //dropdown list for owners (text =Full name of owner value = ID)
             string clientID = "001";
@@ -91,14 +94,15 @@ namespace F2020DiscussionTestLevin
         {
             //arange
             mockPetRepo = new Mock<IPetRepo>();
+            mockClientRepo = new Mock<IClientRepo>();
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
-            mockPetRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
+            mockClientRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
 
             int expectedNumofPetsInList = 1;
 
-            PetController petController = new PetController(mockPetRepo.Object);
+            PetController petController = new PetController(mockPetRepo.Object, mockClientRepo.Object);
 
             //dropdown list for owners (text =Full name of owner value = ID)
             string clientID = "002";
@@ -130,15 +134,16 @@ namespace F2020DiscussionTestLevin
         {
             //arange
             mockPetRepo = new Mock<IPetRepo>();
+            mockClientRepo = new Mock<IClientRepo>();
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
             
-            mockPetRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
+            mockClientRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
 
             int expectedNumofPetsInList = 3;
 
-            PetController petController = new PetController(mockPetRepo.Object);
+            PetController petController = new PetController(mockPetRepo.Object, mockClientRepo.Object);
 
             //dropdown list for owners (text =Full name of owner value = ID)
             DateTime? startDate = new DateTime(2020, 10, 1);
