@@ -20,13 +20,15 @@ namespace F2020DiscussionAppLevin.Controllers
         //private ApplicationDbContext database;     //replace dependancy on databse by using Interface obj
         private IPetRepo iPetRepo;
         private IClientRepo iClientRepo;
+        private IVoucherRequestRepo ivoucherRequestRepo;
 
         // dependancy injection
-        public PetController(IPetRepo petRepo, IClientRepo clientRepo)
+        public PetController(IPetRepo petRepo, IClientRepo clientRepo, IVoucherRequestRepo voucherRequestRepo)
             //ApplicationDbContext dbContext)
         {
             this.iPetRepo = petRepo;
             this.iClientRepo = clientRepo;
+            this.ivoucherRequestRepo = voucherRequestRepo;
             //this.database = dbContext;
         }
         [Authorize(Roles = "Volunteer, Administrator")]
@@ -78,6 +80,16 @@ namespace F2020DiscussionAppLevin.Controllers
 
 
             return View(viewModel);
+        }
+
+        public void AddPet(Pet pet)
+        {
+            if (ModelState.IsValid)
+            {
+                int PetID = iPetRepo.AddPet(pet);
+                VoucherRequest voucherRequest = new VoucherRequest("Pending", PetID);
+                ivoucherRequestRepo.AddVoucherRequest(voucherRequest);
+            }
         }
     }
 }

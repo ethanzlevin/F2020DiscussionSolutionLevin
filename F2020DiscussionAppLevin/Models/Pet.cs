@@ -18,7 +18,7 @@ namespace F2020DiscussionAppLevin.Models
         public int PetID { get; set; }
 
         public string PetName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Pet Type should be Cat or Dog")]
         public string PetType { get; set; }
         [Required]
         public String PetGender { get; set; }

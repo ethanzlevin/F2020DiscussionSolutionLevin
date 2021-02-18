@@ -6,6 +6,7 @@ using Moq;
 using F2020DiscussionAppLevin.Models;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace F2020DiscussionTestLevin
 {
@@ -15,6 +16,17 @@ namespace F2020DiscussionTestLevin
         //instance variable 
         private Mock<IPetRepo> mockPetRepo;
         private Mock<IClientRepo> mockClientRepo;
+        private PetController petController;
+        private Mock<IVoucherRequestRepo> mockVoucherRequestRepo;
+        public PetTest()
+        {
+            mockPetRepo = new Mock<IPetRepo>();
+            mockClientRepo = new Mock<IClientRepo>();
+            mockVoucherRequestRepo = new Mock<IVoucherRequestRepo>();
+            petController = new PetController(mockPetRepo.Object, mockClientRepo.Object, mockVoucherRequestRepo.Object);
+           
+
+        }
         [Fact]
         public void ShouldListAllPets()
         {
@@ -23,15 +35,14 @@ namespace F2020DiscussionTestLevin
             //1.Arrange
             //ApplicationDbContext database = null; controller does not use databse for testing
             
-            mockPetRepo = new Mock<IPetRepo>();
-            mockClientRepo = new Mock<IClientRepo>();
+            
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets);
 
             int expectedNumofPetsInList = 4;
 
-            PetController petController = new PetController(mockPetRepo.Object, mockClientRepo.Object);
+            
             ////2. Act
             
             ViewResult result = petController.ListAllPets() as ViewResult;
@@ -54,8 +65,7 @@ namespace F2020DiscussionTestLevin
         public void ShouldSearchForPetsByOwner()
         {
             //arange
-            mockPetRepo = new Mock<IPetRepo>();
-            mockClientRepo = new Mock<IClientRepo>();
+            
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
@@ -63,7 +73,6 @@ namespace F2020DiscussionTestLevin
 
             int expectedNumofPetsInList = 2;
 
-            PetController petController = new PetController(mockPetRepo.Object, mockClientRepo.Object);
 
             //dropdown list for owners (text =Full name of owner value = ID)
             string clientID = "001";
@@ -93,16 +102,13 @@ namespace F2020DiscussionTestLevin
         public void ShouldSearchForPetsByOwnerandPetType()
         {
             //arange
-            mockPetRepo = new Mock<IPetRepo>();
-            mockClientRepo = new Mock<IClientRepo>();
-
+          
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
             mockClientRepo.Setup(m => m.ListAllClients()).Returns(new List<Client>());
 
             int expectedNumofPetsInList = 1;
 
-            PetController petController = new PetController(mockPetRepo.Object, mockClientRepo.Object);
 
             //dropdown list for owners (text =Full name of owner value = ID)
             string clientID = "002";
@@ -133,8 +139,6 @@ namespace F2020DiscussionTestLevin
         public void ShouldSearchForPetsByARangeOfDecisionDates()
         {
             //arange
-            mockPetRepo = new Mock<IPetRepo>();
-            mockClientRepo = new Mock<IClientRepo>();
 
             List<Pet> mockPets = CreateMockPetData();
             mockPetRepo.Setup(m => m.ListAllPets()).Returns(mockPets); //logic in controller method
@@ -143,7 +147,6 @@ namespace F2020DiscussionTestLevin
 
             int expectedNumofPetsInList = 3;
 
-            PetController petController = new PetController(mockPetRepo.Object, mockClientRepo.Object);
 
             //dropdown list for owners (text =Full name of owner value = ID)
             DateTime? startDate = new DateTime(2020, 10, 1);
@@ -236,6 +239,45 @@ namespace F2020DiscussionTestLevin
 
 
             return mockPets;
+        }
+
+        [Fact]
+        public void ShouldNotAddNewPet() //sad path
+        {
+            Pet pet = new Pet();
+            string expectedErrorMessage = "Pet Type should be Cat or Dog";
+            var validationResult = new List<ValidationResult>();
+            
+
+            bool isValid = Validator.TryValidateObject(pet, new ValidationContext(pet), validationResult);
+
+
+            Assert.False(isValid);
+            string actualErrorMessage = validationResult[0].ToString();
+            Assert.Equal(expectedErrorMessage, actualErrorMessage);
+
+        }
+        [Fact]
+        public void ShouldAddNewPet() //happy path
+        {
+            Pet pet = new Pet("testName", "testType", "testGender", new DateTime(2021, 01, 01), "testsize", "001");
+            pet.PetID = 5;
+            mockPetRepo.Setup(m => m.AddPet(pet)).Returns(pet.PetID); //need this explained ask jaren
+
+            VoucherRequest voucherRequest = null;
+            //fluent notation--ItIsAnyVoucherRequest
+            mockVoucherRequestRepo.Setup(v => v.AddVoucherRequest(It.IsAny<VoucherRequest>()))
+                .Callback<VoucherRequest>(vr => voucherRequest = vr);
+
+            
+
+            petController.AddPet(pet);
+
+
+            mockPetRepo.Verify(m => m.AddPet(pet), Times.Exactly(1));
+            Assert.Equal("Pending", voucherRequest.RequestStatus);
+            Assert.Equal(DateTime.Today.Date, voucherRequest.RequestDate);
+
         }
 
 

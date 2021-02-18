@@ -10,9 +10,7 @@ namespace F2020DiscussionAppLevin.Models
         //list of method signatures
         //what should be done but not how (not implemented)
         List<Pet> ListAllPets();
-
-       
-
+        int AddPet(Pet pet);
     }
 
 

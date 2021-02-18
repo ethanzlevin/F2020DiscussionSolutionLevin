@@ -38,6 +38,8 @@ namespace F2020DiscussionAppLevin
             services.AddRazorPages();
             services.AddTransient<IPetRepo, PetRepo>(); // add for each repo
             services.AddTransient<IClientRepo, ClientRepo>();
+            services.AddTransient<IVoucherRequestRepo, VoucherRequestRepo>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

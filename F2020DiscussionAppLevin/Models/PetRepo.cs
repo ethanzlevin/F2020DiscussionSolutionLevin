@@ -25,5 +25,13 @@ namespace F2020DiscussionAppLevin.Models // database connection
            List<Pet> pets = database.Pet.Include(p => p.Client).Include(p => p.VoucherRequestForPet).ToList();
             return pets;
         }
+
+        public int AddPet(Pet pet)
+        {
+            database.Pet.Add(pet);
+            database.SaveChanges();
+            return pet.PetID;
+        }
+
     }
 }
