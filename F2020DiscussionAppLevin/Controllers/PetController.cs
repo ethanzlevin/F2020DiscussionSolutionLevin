@@ -82,6 +82,16 @@ namespace F2020DiscussionAppLevin.Controllers
             return View(viewModel);
         }
 
+        [HttpGet] //user gets the view
+        public IActionResult AddPet()
+        {
+            ViewData["AllClients"] = new SelectList(iClientRepo.ListAllClients(), "Id", "Fullname"); 
+
+            return View();
+        }
+
+        [HttpPost] //user input sent to server
+
         public void AddPet(Pet pet)
         {
             if (ModelState.IsValid)
