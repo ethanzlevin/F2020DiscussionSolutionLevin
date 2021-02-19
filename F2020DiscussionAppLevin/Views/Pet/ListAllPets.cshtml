@@ -21,6 +21,7 @@
             <th>
                 Request Date/Status
             </th>
+            <th></th>
         </tr>
     </thead>
 
@@ -32,6 +33,10 @@
                 {
                 <td>@eachPet.PetName</td>
                 }
+                else
+                {
+                    <td></td>
+                }
 
                 <td>@eachPet.PetType</td>
                 <td>@eachPet.PetGender</td>
@@ -42,7 +47,7 @@
                 }
                 else
                 {
-                    <td>@Html.DisplayText("Date of Birth Unknown")</td>
+                    <td>Date of Birth Unknown</td>
                 }
                 <td>
                     @foreach (VoucherRequest eachRequest in eachPet.VoucherRequestForPet)
@@ -51,7 +56,10 @@
 
                         }   
                 </td>
-
+                <td>
+                    <a class="btn-primary" asp-controller="Pet" asp-action="EditPet" asp-route-petID="@eachPet.PetID">Edit</a> 
+                    <a class="btn-primary" asp-controller="Pet" asp-action="DeletePet" asp-route-petID="@eachPet.PetID">Delete</a>
+                </td>
             </tr>
         }
 

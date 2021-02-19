@@ -4,7 +4,10 @@
     ViewData["Title"] = "AddPet";
 }
 
+
 <h4>@ViewData["Title"]</h4>
+
+<div asp-validation-summary="All" class="text-danger"></div>
 
 <form asp-action="AddPet" asp-controller="Pet" method="post">
 
@@ -14,11 +17,7 @@
 
     </div>
 
-    <div class="form-group">
-        <label> Pet Name</label>
-        <input asp-for="PetName" class="form-control" />
 
-    </div>
 
     <div class="form-group">
         <label> Pet Type</label>

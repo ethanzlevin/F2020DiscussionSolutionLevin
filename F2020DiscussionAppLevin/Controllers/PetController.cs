@@ -31,6 +31,12 @@ namespace F2020DiscussionAppLevin.Controllers
             this.ivoucherRequestRepo = voucherRequestRepo;
             //this.database = dbContext;
         }
+
+        public void EditPet(object pet)
+        {
+            throw new NotImplementedException();
+        }
+
         [Authorize(Roles = "Volunteer, Administrator")]
         //Interface - Class
         public IActionResult ListAllPets()
@@ -92,13 +98,20 @@ namespace F2020DiscussionAppLevin.Controllers
 
         [HttpPost] //user input sent to server
 
-        public void AddPet(Pet pet)
+        public IActionResult AddPet(Pet pet)
         {
             if (ModelState.IsValid)
             {
                 int PetID = iPetRepo.AddPet(pet);
                 VoucherRequest voucherRequest = new VoucherRequest("Pending", PetID);
                 ivoucherRequestRepo.AddVoucherRequest(voucherRequest);
+                return RedirectToAction("ListAllPets");
+            }
+            else
+            {
+                ViewData["AllClients"] = new SelectList(iClientRepo.ListAllClients(), "Id", "Fullname");
+
+                return View();
             }
         }
     }

@@ -24,9 +24,25 @@ namespace F2020DiscussionTestLevin
             mockClientRepo = new Mock<IClientRepo>();
             mockVoucherRequestRepo = new Mock<IVoucherRequestRepo>();
             petController = new PetController(mockPetRepo.Object, mockClientRepo.Object, mockVoucherRequestRepo.Object);
-           
 
+            petController.EditPet(pet);
+
+
+            mockPetRepo.Verify(m => m.EditPet(pet), Times.Exactly(1));
         }
+
+        [Fact]
+        public void ShouldEditPet()
+        {
+            Pet pet = new Pet("testName", "testType", "testGender", new DateTime(2021, 01, 01), "testsize", "001");
+            pet.PetID = 5;
+            mockPetRepo.Setup(m => m.EditPet(It.IsAny<Pet>()));
+
+
+            
+        }
+
+
         [Fact]
         public void ShouldListAllPets()
         {

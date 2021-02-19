@@ -33,5 +33,17 @@ namespace F2020DiscussionAppLevin.Models // database connection
             return pet.PetID;
         }
 
+        public void EditPet(Pet pet)
+        {
+
+            database.Pet.Update(pet);
+            database.SaveChanges();
+        }
+
+        public Pet FindPet(int petID)
+        {
+            Pet pet = database.Pet.Find(petID);
+            return pet;
+        }
     }
 }
