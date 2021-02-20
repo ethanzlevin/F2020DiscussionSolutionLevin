@@ -25,10 +25,7 @@ namespace F2020DiscussionTestLevin
             mockVoucherRequestRepo = new Mock<IVoucherRequestRepo>();
             petController = new PetController(mockPetRepo.Object, mockClientRepo.Object, mockVoucherRequestRepo.Object);
 
-            petController.EditPet(pet);
-
-
-            mockPetRepo.Verify(m => m.EditPet(pet), Times.Exactly(1));
+            
         }
 
         [Fact]
@@ -38,8 +35,11 @@ namespace F2020DiscussionTestLevin
             pet.PetID = 5;
             mockPetRepo.Setup(m => m.EditPet(It.IsAny<Pet>()));
 
+            petController.EditPet(pet);
 
-            
+
+            mockPetRepo.Verify(m => m.EditPet(pet), Times.Exactly(1));
+
         }
 
 
@@ -279,6 +279,7 @@ namespace F2020DiscussionTestLevin
             Pet pet = new Pet("testName", "testType", "testGender", new DateTime(2021, 01, 01), "testsize", "001");
             pet.PetID = 5;
             mockPetRepo.Setup(m => m.AddPet(pet)).Returns(pet.PetID); //need this explained ask jaren
+
 
             VoucherRequest voucherRequest = null;
             //fluent notation--ItIsAnyVoucherRequest
