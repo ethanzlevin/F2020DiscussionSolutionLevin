@@ -13,7 +13,7 @@ namespace F2020DiscussionAppLevin.Models
         int AddPet(Pet pet);
         void EditPet(Pet pet);
 
-        Pet FindPet(int petID);
+        Pet FindPet(int? petID);
     }
 
 

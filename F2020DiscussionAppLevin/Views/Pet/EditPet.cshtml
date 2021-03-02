@@ -1,0 +1,19 @@
+﻿@model Pet
+@{
+    ViewData["Title"] = "Edit Pet";
+}
+
+<h4>Edit Pet</h4>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="EditPet" asp-controller="Pet" method="post">
+
+    @Html.HiddenFor(m => m.PetID)
+
+   <partial name="AddEditPetPartialView" model="Model"/>
+
+    <button type="submit" class="btn btn-primary">Edit Pet</button>
+
+
+</form>

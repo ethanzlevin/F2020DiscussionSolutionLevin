@@ -1,0 +1,53 @@
+﻿@model Pet
+<div class="form-group">
+    <label> Pet Name</label>
+    <input asp-for="PetName" class="form-control" />
+
+</div>
+
+
+
+<div class="form-group">
+    <label> Pet Type</label>
+    <select asp-for="PetType" class="form-control">
+        <option value="">None</option>
+        <option value="Cat">Cat</option>
+        <option value="Dog">Dog</option>
+    </select>
+
+</div>
+
+<div class="form-group">
+    <label> Pet Gender</label>
+    <select asp-for="PetGender" class="form-control">
+
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+</div>
+
+<div class="form-group">
+    <label> Date of Birth</label>
+    <input asp-for="PetDOB" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label> Pet Size</label>
+    <select asp-for="PetSize" class="form-control">
+        <option value="">None</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+    </select>
+
+
+</div>
+
+<div class="form-group">
+    <label> Choose Client</label>
+    <select asp-for="ClientID" asp-items="ViewBag.AllClients" class="form-control">
+        <option value="">None</option>
+    </select>
+
+</div>
