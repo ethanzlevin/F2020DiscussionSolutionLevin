@@ -24,9 +24,10 @@ namespace F2020DiscussionAppLevin.Models
 
         public bool? VoucherRedeemed { get; set; }
 
+        public string VoulenteerID { get; set; }
+        [ForeignKey("VoulenteerID")]
+        public Volunteer DecisionMaker { get; set; }
 
-        
- 
         [Required]
         public int PetID { get; set; }  //serves as FK in Realational databse
 

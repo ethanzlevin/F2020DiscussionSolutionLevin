@@ -22,5 +22,17 @@ namespace F2020DiscussionAppLevin.Models
             database.VoucherRequest.Add(voucherRequest);
             database.SaveChanges();
         }
+
+        public VoucherRequest FindVoucherRequest(int? voucherRequestID)
+        {
+           VoucherRequest voucherRequest = database.VoucherRequest.Find(voucherRequestID);
+            return voucherRequest;
+        }
+
+        public void MakeRequestDecision(VoucherRequest voucherRequest)
+        {
+            database.VoucherRequest.Update(voucherRequest);
+            database.SaveChanges();
+        }
     }
 }

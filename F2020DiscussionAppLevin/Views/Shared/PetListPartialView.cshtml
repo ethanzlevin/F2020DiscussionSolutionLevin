@@ -46,16 +46,34 @@
                     {
                         <td>Date of Birth Unknown</td>
                     }
-                    <td>
-                        @foreach (VoucherRequest eachRequest in eachPet.VoucherRequestForPet)
+                <td width="350">
+                    @foreach (VoucherRequest eachRequest in eachPet.VoucherRequestForPet)
+                    {
+                        @(eachRequest.RequestDate.ToShortDateString()  +" " + eachRequest.RequestStatus)
+                        @if (eachRequest.RequestStatus == "Approved")
                         {
-                            @(eachRequest.RequestDate.ToShortDateString()  +"" + eachRequest.RequestStatus)<br />
+                            @(" Amount: $" + eachRequest.RequestAmount)
+                        }
 
-                            }
-                    </td>
+                        if(eachRequest.VoulenteerID != null)
+                        {
+                            
+                            @(" Decision Made by : " + eachRequest.DecisionMaker.Fullname)
+                        }
+
+                        @if (eachRequest.RequestStatus == "Pending")
+                        {
+                            <a class="btn btn-outline-secondary" asp-controller="VoucherRequest" asp-action="MakeVoucherRequestDecision" asp-route-voucherRequestID="@eachRequest.RequestID" asp-route-requestDecision="Approved">Approve</a>
+                            <a class="btn btn-outline-secondary" asp-controller="VoucherRequest" asp-action="MakeVoucherRequestDecision" asp-route-voucherRequestID="@eachRequest.RequestID" asp-route-requestDecision="Denied">Deny</a>
+                        }
+                        <br />
+
+                    }
+                </td>
                     <td>
-                        <a class="btn-primary" asp-controller="Pet" asp-action="EditPet" asp-route-petID="@eachPet.PetID">Edit</a>
-                        <a class="btn-primary" asp-controller="Pet" asp-action="DeletePet" asp-route-petID="@eachPet.PetID">Delete</a>
+                        
+                        <a class="btn btn-primary" asp-controller="Pet" asp-action="EditPet" asp-route-petID="@eachPet.PetID">Edit</a>
+                        <a class="btn btn-primary" asp-controller="Pet" asp-action="ConfirmDeletePet" asp-route-petID="@eachPet.PetID">Delete</a>
                     </td>
                 </tr>
             }

@@ -15,7 +15,7 @@ namespace F2020DiscussionAppLevin
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();//.Run();
+            var host = CreateHostBuilder(args).Build(); //.Run();
 
             using (var scope = host.Services.CreateScope())
             {

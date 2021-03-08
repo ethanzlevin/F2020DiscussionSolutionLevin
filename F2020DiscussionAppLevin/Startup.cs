@@ -39,6 +39,7 @@ namespace F2020DiscussionAppLevin
             services.AddTransient<IPetRepo, PetRepo>(); // add for each repo
             services.AddTransient<IClientRepo, ClientRepo>();
             services.AddTransient<IVoucherRequestRepo, VoucherRequestRepo>();
+            services.AddTransient<IApplicationUserRepo, ApplicationUserRepo>();
             
         }
 

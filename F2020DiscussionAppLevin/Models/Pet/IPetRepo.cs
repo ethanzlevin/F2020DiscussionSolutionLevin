@@ -14,6 +14,8 @@ namespace F2020DiscussionAppLevin.Models
         void EditPet(Pet pet);
 
         Pet FindPet(int? petID);
+        double FindRequestAmount(int petID);
+        void DeletePet(Pet pet);
     }
 
 

@@ -1,0 +1,55 @@
+﻿@model Pet
+@{
+    ViewData["Title"] = "ConfirmDeletePet";
+}
+
+<h3>Are you sure you would like to delete @Model.PetName</h3>
+
+<form asp-action="DeletePet" asp-controller="Pet" method="post">
+    @Html.HiddenFor(m => m.PetID)
+
+    <div class="form-group">
+        <label>Pet Name</label>
+        <input asp-for="PetName" class="form-control" readonly/>
+
+    </div>
+
+
+
+    <div class="form-group">
+        <label>Pet Type</label>
+        <input asp-for="PetType" class="form-control" readonly/>
+        
+
+    </div>
+
+    <div class="form-group">
+        <label>Pet Gender</label>
+        <input asp-for="PetGender" class="form-control" readonly/>
+
+
+    </div>
+
+    <div class="form-group">
+        <label>Date of Birth</label>
+        <input asp-for="PetDOB" class="form-control" readonly/>
+    </div>
+
+    <div class="form-group">
+        <label>Pet Size</label>
+        <input asp-for="PetSize" class="form-control" readonly/>
+            
+
+
+    </div>
+
+    <div class="form-group">
+        <label>Client</label>
+        <input asp-for="ClientID" class="form-control" readonly/>
+          
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirm Delete Pet</button>
+
+</form>
+

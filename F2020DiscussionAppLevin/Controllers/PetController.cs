@@ -39,6 +39,21 @@ namespace F2020DiscussionAppLevin.Controllers
 
             return View(pet);
         }
+
+        public IActionResult ConfirmDeletePet(int? petID)
+        {
+            Pet pet = iPetRepo.FindPet(petID);
+
+            return View(pet);
+        }
+
+        
+        public IActionResult DeletePet(Pet pet)
+        {
+            iPetRepo.DeletePet(pet);
+            return RedirectToAction("ListAllPets");
+        }
+
         [HttpPost]
         public IActionResult EditPet(Pet pet)
         {

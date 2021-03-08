@@ -29,6 +29,19 @@ namespace F2020DiscussionTestLevin
         }
 
         [Fact]
+        public void ShouldDeletePet()
+        {
+            Pet pet = new Pet("testName", "testType", "testGender", new DateTime(2021, 01, 01), "testsize", "001");
+            pet.PetID = 5;
+            mockPetRepo.Setup(m => m.DeletePet(It.IsAny<Pet>()));
+
+            petController.DeletePet(pet);
+
+
+            mockPetRepo.Verify(m => m.DeletePet(pet), Times.Exactly(1));
+        }
+
+        [Fact]
         public void ShouldEditPet()
         {
             Pet pet = new Pet("testName", "testType", "testGender", new DateTime(2021, 01, 01), "testsize", "001");

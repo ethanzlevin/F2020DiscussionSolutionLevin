@@ -22,7 +22,11 @@ namespace F2020DiscussionAppLevin.Models // database connection
 
         public List<Pet> ListAllPets()
         {
-           List<Pet> pets = database.Pet.Include(p => p.Client).Include(p => p.VoucherRequestForPet).ToList();
+           List<Pet> pets = database.Pet
+                .Include(p => p.Client)
+                .Include(p => p.VoucherRequestForPet)
+                .ThenInclude(vr => vr.DecisionMaker)
+                .ToList();
             return pets;
         }
 
@@ -44,6 +48,66 @@ namespace F2020DiscussionAppLevin.Models // database connection
         {
             Pet pet = database.Pet.Find(petID);
             return pet;
+        }
+
+        public double FindRequestAmount(int petID)
+        {
+            Pet pet = FindPet(petID);
+            double requestAmount;
+
+            if (pet.PetType == "Cat")
+            {
+                if (pet.PetGender == "Male")
+                {
+                    requestAmount = 60.00;
+                }
+                else
+                {
+                    requestAmount = 50.00;
+                }
+            }
+            else
+            {
+                if (pet.PetGender == "Male")
+                {
+                   if(pet.PetSize == "Small")
+                    {
+                        requestAmount = 100.00;
+                    }
+                   if(pet.PetSize == "Medium")
+                    {
+                        requestAmount = 110.00;
+                    }
+                   else
+                    {
+                        requestAmount = 120.00;
+                    }
+                }
+                else
+                {
+                    if (pet.PetSize == "Small")
+                    {
+                        requestAmount = 70.00;
+                    }
+                    if (pet.PetSize == "Medium")
+                    {
+                        requestAmount = 80.00;
+                    }
+                    else
+                    {
+                        requestAmount = 90.00;
+                    }
+                }
+
+            }
+            return requestAmount;
+
+        }
+
+        public void DeletePet(Pet pet)
+        {
+            database.Pet.Remove(pet);
+            database.SaveChanges();
         }
     }
 }
