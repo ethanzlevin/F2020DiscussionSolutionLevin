@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using F2020DiscussionAppLevin.Models;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using F2020DiscussionAppLevin.Services;
 
 namespace F2020DiscussionAppLevin
 {
@@ -31,7 +33,21 @@ namespace F2020DiscussionAppLevin
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            services.AddDefaultIdentity<ApplicationUser>
+                (
+                options =>
+                {
+
+                    options.SignIn.RequireConfirmedAccount = true;
+                    options.Password.RequiredLength = 6;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = true;
+                    options.Password.RequireLowercase = true;
+                    options.Password.RequireDigit = true;
+                    options.User.RequireUniqueEmail = true;
+
+                }
+                )
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
@@ -40,6 +56,7 @@ namespace F2020DiscussionAppLevin
             services.AddTransient<IClientRepo, ClientRepo>();
             services.AddTransient<IVoucherRequestRepo, VoucherRequestRepo>();
             services.AddTransient<IApplicationUserRepo, ApplicationUserRepo>();
+            services.AddTransient<IEmailSender, EmailSender>();
             
         }
 

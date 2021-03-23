@@ -327,7 +327,6 @@ C:\Users\ethan\Desktop\Notes\F2020DiscussionSolutionLevin\F2020DiscussionTestLev
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.csprojAssemblyReference.cache
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.AssemblyInfoInputs.cache
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.AssemblyInfo.cs
-C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.csproj.CoreCompileInputs.cache
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.dll
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.pdb
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -367,7 +366,6 @@ C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTes
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -554,3 +552,7 @@ C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTes
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\F2020DiscussionAppLevin.pdb
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.csproj.CopyComplete
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.genruntimeconfig.cache
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.csproj.CoreCompileInputs.cache
