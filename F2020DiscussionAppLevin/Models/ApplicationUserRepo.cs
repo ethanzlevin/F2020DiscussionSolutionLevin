@@ -28,5 +28,48 @@ namespace F2020DiscussionAppLevin.Models
             return userID;
         }//end FindUserID
 
+        public string GetAvailableRoles(string id)
+        {
+            string jsonData = null;
+
+            var availableRoleList =
+
+                from R in database.Roles
+                where !
+                (
+                from UR in database.UserRoles
+                where UR.UserId == id
+                select UR.RoleId
+                )
+                .Contains(R.Id)
+                select new { R.Id, R.Name };
+
+            jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(availableRoleList);
+
+
+            return jsonData;
+        }
+
+        public string GetCurrentRoles(string id)
+        {
+            string jsonData = null;
+
+            var userRoleList =
+                from UR in database.UserRoles
+                join R in database.Roles
+                on UR.RoleId equals R.Id
+                where UR.UserId == id
+                select new { R.Id, R.Name };
+
+            jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(userRoleList);
+
+            return jsonData;
+        }
+
+        public List<ApplicationUser> ListAllAppUsers()
+        {
+            List<ApplicationUser> applicationUsers = database.ApplicationUser.ToList();
+            return applicationUsers;
+        }
     }
 }

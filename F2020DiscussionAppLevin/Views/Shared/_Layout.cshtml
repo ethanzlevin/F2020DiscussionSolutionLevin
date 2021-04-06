@@ -27,7 +27,7 @@
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            @if (User.IsInRole("Volunteer") )
+                            @if (User.IsInRole("Volunteer"))
                             {
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown">Pet</a>
@@ -41,12 +41,13 @@
                                 </li>
 
                             }
-                            
+
 
                             @if (User.IsInRole("Administrator"))
                             {
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="Decide Request">Decide Request</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="AppUser" asp-action="AssignAppUserRoles">Assign User Roles</a>
 
                                 </li>
                             }

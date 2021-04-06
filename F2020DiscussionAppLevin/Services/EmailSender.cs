@@ -16,7 +16,7 @@ namespace F2020DiscussionAppLevin.Services
             try
             {
                 //From Address    
-                string FromAddress = "Your Gmail Address";
+                string FromAddress = "ethanzlevin@gmail.com";
                 string FromAddressTitle = "M-SNAP App Admin";
                 //To Address    
                 string ToAddress = email;
@@ -48,8 +48,8 @@ namespace F2020DiscussionAppLevin.Services
                 {
                     client.Connect(SmtpServer, SmtpPortNumber, false);
                     client.Authenticate(
-                        "Your Gmail Address",
-                        "Password"
+                        "ethanzlevin@gmail.com",
+                        "tzsbnflchbhshbji"
                         );
                     await client.SendAsync(mimeMessage);
                     await client.DisconnectAsync(true);

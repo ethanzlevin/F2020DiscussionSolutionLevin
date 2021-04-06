@@ -49,23 +49,31 @@ namespace F2020DiscussionAppLevin.Data
             {
 
                 Client client = new Client("Test", "Client1", "1 street road", "888888888", "TestClient1@test.com", "TestClient1");
+                client.EmailConfirmed = true;
                 userManager.CreateAsync(client).Wait();
                 userManager.AddToRoleAsync(client, clientRole).Wait();
 
                 client = new Client("Test", "Client2", "2 street road", "988888888", "TestClient2@test.com", "TestClient2");
+                client.EmailConfirmed = true;
+
                 userManager.CreateAsync(client).Wait();
                 userManager.AddToRoleAsync(client, clientRole).Wait();
 
                Volunteer volunteer = new Volunteer("Test", "Volunteer1", "3 street road", "898888888", "TestVolunteer1@test.com", "TestVolunteer1", 10);
+                volunteer.EmailConfirmed = true;
+
                 userManager.CreateAsync(volunteer).Wait();
                 userManager.AddToRoleAsync(volunteer, volunteerRole).Wait();
                 userManager.AddToRoleAsync(volunteer, administratorRole).Wait();
 
                 volunteer = new Volunteer("Test", "Volunteer2", "4 street road", "998888888", "TestVolunteer2@test.com", "TestVolunteer2", 20);
+                volunteer.EmailConfirmed = true;
+
                 userManager.CreateAsync(volunteer).Wait();
                 userManager.AddToRoleAsync(volunteer, volunteerRole).Wait();
 
                 ApplicationUser applicationUser = new ApplicationUser("Test", "Administrator 1", "5 street road", "563738232", "TestAdmin@test.com","AdminTest");
+                applicationUser.EmailConfirmed = true;
                 userManager.CreateAsync(applicationUser).Wait();
                 userManager.AddToRoleAsync(applicationUser, administratorRole).Wait();
 

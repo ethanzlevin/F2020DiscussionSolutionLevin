@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a0ZViCsKPsv3Guo/CfeKjPmVoq5+pp69GmMM3rBoFSrnEMVxRkfIrWjTkf3N3rpP0bLmKkMSaj0sglWBjF7w1A==",
+  "dgSpecHash": "2KSV3zt5OcpHXgVeqS920LnFK8WSSpWTnS/pYBLVa/QtOQgI1QOJozMpWm7dE8M1cdts1GcPYagwOLL8p/JsGg==",
   "success": true,
   "projectFilePath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
   "expectedPackageFiles": [
@@ -71,7 +71,7 @@
     "C:\\Users\\EthanLevin\\.nuget\\packages\\mimekit\\2.11.0\\mimekit.2.11.0.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\moq\\4.15.1\\moq.4.15.1.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\EthanLevin\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\EthanLevin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\portable.bouncycastle\\1.8.10\\portable.bouncycastle.1.8.10.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
