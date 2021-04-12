@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "2KSV3zt5OcpHXgVeqS920LnFK8WSSpWTnS/pYBLVa/QtOQgI1QOJozMpWm7dE8M1cdts1GcPYagwOLL8p/JsGg==",
+  "dgSpecHash": "1dXaaXZdpvsWB5dy2KVFQpviCyC/i4yRDuK3pkmzM1wsqsfKq1gXcutv1yd/8yy6h4xOOKQzpmZEl+u/AWXxjg==",
   "success": true,
   "projectFilePath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionTestLevin\\F2020DiscussionTestLevin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EthanLevin\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
+    "C:\\Users\\EthanLevin\\.nuget\\packages\\googleapi\\3.10.7\\googleapi.3.10.7.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\mailkit\\2.11.1\\mailkit.2.11.1.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.13\\microsoft.aspnetcore.cryptography.internal.3.1.13.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.13\\microsoft.aspnetcore.cryptography.keyderivation.3.1.13.nupkg.sha512",

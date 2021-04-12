@@ -10,7 +10,8 @@
             success: function (data) {
                 listRoles.empty();
                 $.each(data, function () {
-                    listRoles.append('<input type="checkbox" name = "' + checkBoxName + '" value = "' + this.Name + '">' + this.Name + '</br>');
+                    //listRoles.append('<input type="checkbox" name = "' + checkBoxName + '" value = "' + this.Name + '">' + this.Name + '</br>');
+                    listRoles.append('<option value="' + this.Name + '"> ' + this.Name + ' </option>');
                 }
                 );
             },

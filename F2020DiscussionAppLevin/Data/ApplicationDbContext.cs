@@ -15,6 +15,8 @@ namespace F2020DiscussionAppLevin.Data
 
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
+        public DbSet<VetClinic> VetClinic { get; set; }
+
         public DbSet<Client> Client { get; set; }
 
         public DbSet<Volunteer> Volunteer { get; set; }

@@ -48,18 +48,24 @@ namespace F2020DiscussionAppLevin.Data
             if (!database.ApplicationUser.Any())
             {
 
-                Client client = new Client("Test", "Client1", "1 street road", "888888888", "TestClient1@test.com", "TestClient1");
+                Client client = new Client("Test", "Client1", "109 Wilson Ave, Morgantown, WV 26501", "888888888", "TestClient1@test.com", "TestClient1");
                 client.EmailConfirmed = true;
                 userManager.CreateAsync(client).Wait();
                 userManager.AddToRoleAsync(client, clientRole).Wait();
 
-                client = new Client("Test", "Client2", "2 street road", "988888888", "TestClient2@test.com", "TestClient2");
+                client = new Client("Test", "Client2", "131 Bakers Ridge Rd, Morgantown, WV 26508", "988888888", "TestClient2@test.com", "TestClient2");
                 client.EmailConfirmed = true;
 
                 userManager.CreateAsync(client).Wait();
                 userManager.AddToRoleAsync(client, clientRole).Wait();
 
-               Volunteer volunteer = new Volunteer("Test", "Volunteer1", "3 street road", "898888888", "TestVolunteer1@test.com", "TestVolunteer1", 10);
+                client = new Client("Test", "Client3", "1 Loop Park Dr, Fairmont, WV 26554, Morgantown, WV 26508", "988888828", "TestClient3@test.com", "TestClient3");
+                client.EmailConfirmed = true;
+
+                userManager.CreateAsync(client).Wait();
+                userManager.AddToRoleAsync(client, clientRole).Wait();
+
+                Volunteer volunteer = new Volunteer("Test", "Volunteer1", "3 street road", "898888888", "TestVolunteer1@test.com", "TestVolunteer1", 10);
                 volunteer.EmailConfirmed = true;
 
                 userManager.CreateAsync(volunteer).Wait();
@@ -200,6 +206,32 @@ namespace F2020DiscussionAppLevin.Data
                 database.SaveChanges();
 
 
+            }
+            if(!database.VetClinic.Any())
+            {
+                VetClinic vetClinic = new VetClinic("Paw Prints Veterinary Clinic", "1745 Mileground Rd, Morgantown, WV 26505");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Mountaineer Veterinary Clinic", "239 Green Bag Road, Morgantown, WV 26501");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Hillcrest Veterinary Clinic", "3083 Point Marion Rd, Morgantown, WV 26505");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Brook Valley Veterinary Clinic", "19 Co Rd 79/10, Morgantown, WV 26508");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Alpha Veterinary Services", "2060 Morgantown Rd, Uniontown, PA 15401");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Fairmont Veterinary Hospital", "619 Gaston Ave, Fairmont, WV 26554");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
             }
 
             if (!database.FundforVoucher.Any())

@@ -57,6 +57,7 @@ namespace F2020DiscussionAppLevin
             services.AddTransient<IVoucherRequestRepo, VoucherRequestRepo>();
             services.AddTransient<IApplicationUserRepo, ApplicationUserRepo>();
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IVetClinicRepo, VetClinicRepo>();
             
         }
 

@@ -11,5 +11,7 @@ namespace F2020DiscussionAppLevin.Models
         List<ApplicationUser> ListAllAppUsers();
         string GetCurrentRoles(string id);
         string GetAvailableRoles(string id);
+
+        ApplicationUser FindApplicationUser(string id);
     }
 }

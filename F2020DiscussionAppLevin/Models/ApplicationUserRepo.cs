@@ -21,6 +21,12 @@ namespace F2020DiscussionAppLevin.Models
             
         }
 
+        public ApplicationUser FindApplicationUser(string id)
+        {
+           ApplicationUser user = database.ApplicationUser.Find(id);
+            return user;
+        }
+
         public string FindUserID()
         {
             HttpContextAccessor httpContextAccessor = new HttpContextAccessor();

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FtfTfYFRV3M+JPTJN+pan5pf2IhFYIZcvKDMQ8u/GQTn+GkfVSYAp5zthGwtdP6jvRI4noTy/rQpjC+YC9dQbw==",
+  "dgSpecHash": "dGf3hwEkEQtGJB8Cu1bjcS+yx/IYcWDBAnbOYTbJuaDIfU6mranH3S6uPCWSW48XvscTLiOTWu1OGx9pCNIutQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\EthanLevin\\source\\repos\\F2020DiscussionSolutionLevin\\F2020DiscussionAppLevin\\F2020DiscussionAppLevin.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\EthanLevin\\.nuget\\packages\\googleapi\\3.10.7\\googleapi.3.10.7.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\mailkit\\2.11.1\\mailkit.2.11.1.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.13\\microsoft.aspnetcore.cryptography.internal.3.1.13.nupkg.sha512",
     "C:\\Users\\EthanLevin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.13\\microsoft.aspnetcore.cryptography.keyderivation.3.1.13.nupkg.sha512",
