@@ -8,5 +8,6 @@ namespace F2020DiscussionAppLevin.Models
     public interface IClientRepo
     {
         List<Client> ListAllClients();
+        Client FindClient(string clientID);
     }
 }

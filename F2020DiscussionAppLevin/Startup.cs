@@ -58,6 +58,15 @@ namespace F2020DiscussionAppLevin
             services.AddTransient<IApplicationUserRepo, ApplicationUserRepo>();
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<IVetClinicRepo, VetClinicRepo>();
+
+
+            services.AddSession(options => 
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.IsEssential = true;
+            }
+            );
+
             
         }
 
@@ -82,6 +91,7 @@ namespace F2020DiscussionAppLevin
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

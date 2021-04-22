@@ -475,3 +475,4 @@ C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionApp
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\F2020DiscussionAppLevin.csproj.CoreCompileInputs.cache
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\F2020DiscussionAppLevin.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\F2020DiscussionAppLevin.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\Razor\Views\VetClinic\DetermineDistanceMatrix.cshtml.g.cs

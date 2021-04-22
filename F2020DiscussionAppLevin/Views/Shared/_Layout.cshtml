@@ -40,12 +40,20 @@
                                     </div>
                                 </li>
 
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Vet</a>
+                                    <div class="dropdown-menu">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="VetClinic" asp-action="DetermineDistanceMatrix">Clinic Distances</a>
+
+                                    </div>
+                                </li>
                             }
 
 
                             @if (User.IsInRole("Administrator"))
                             {
-                                
+
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="AppUser" asp-action="AssignAppUserRoles">Assign User Roles</a>
 

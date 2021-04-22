@@ -41,6 +41,18 @@
         }
       },
       "coverlet.collector/1.2.0": {},
+      "GoogleApi/3.10.7": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Portable.BouncyCastle": "1.8.10"
+        },
+        "runtime": {
+          "lib/netstandard2.1/GoogleApi.dll": {
+            "assemblyVersion": "3.10.7.0",
+            "fileVersion": "3.10.7.0"
+          }
+        }
+      },
       "MailKit/2.11.1": {
         "dependencies": {
           "MimeKit": "2.11.0"
@@ -2269,6 +2281,7 @@
       },
       "F2020DiscussionAppLevin/1.0.0": {
         "dependencies": {
+          "GoogleApi": "3.10.7",
           "MailKit": "2.11.1",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.8",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.13",
@@ -2303,6 +2316,13 @@
       "sha512": "sha512-ZB+EGXsVBIn8cew7D3S2c+rgIlokKv1dSwsXEoiFQaNXF/BSxp9Rlfz/jV1ehSWH5XpLitfRxFNW3ok7uPDOXA==",
       "path": "coverlet.collector/1.2.0",
       "hashPath": "coverlet.collector.1.2.0.nupkg.sha512"
+    },
+    "GoogleApi/3.10.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EFyC2pVNute+qxoYKHxMbhzT/H9xkyykYmAsarO96Ut3CzMvBZRFKVxMmPALQyPX6G0AHhXzs1qEwWdNOPbpZg==",
+      "path": "googleapi/3.10.7",
+      "hashPath": "googleapi.3.10.7.nupkg.sha512"
     },
     "MailKit/2.11.1": {
       "type": "package",

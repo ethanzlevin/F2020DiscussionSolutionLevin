@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DistanceViewModel>
+@{
+    ViewData["Title"] = "Distance Matrix";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<form asp-controller="VetClinic" asp-action="DetermineDistanceMatrixResult" method="post">
+
+    <div class="form-group">
+        <label>Select a Client</label>
+        <select name="clientID" style="width:200px" asp-items="ViewBag.Clients" class="form-control">
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Find Distance Matrix</button>
+
+</form>
+
+@*Result section follows. When do we enter the result section?*@
+
+@if (Model != null)
+{
+    <h3>@ViewBag.ClientInformation </h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Clinic Name</th>
+                <th>Clinic Address</th>
+                <th>
+                    <a class="btn btn-secondary"
+                       asp-controller="VetClinic" asp-action="DetermineDistanceMatrixResult" asp-route-sortOrder="ViewBag.DistanceSortParam">
+                       @if(ViewBag.DistanceImage == "descending")
+                       {
+                       <img src="~/images/DescendingImage.png" width="20" height="20"/>
+                       }
+                       
+                        Distance In Miles
+                    </a>
+                </th>
+                <th>
+                    <a class="btn btn-secondary"
+                       asp-controller="VetClinic" asp-action="DetermineDistanceMatrixResult" asp-route-sortOrder="ViewBag.DurationSortParam">
+                        @if (ViewBag.DurationImage == "descending")
+                        {
+                            <img src="~/images/DescendingImage.png" width="20" height="20" />
+                        }
+
+                        Duration In Minutes
+                    </a>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(DistanceViewModel eachDistanceViewModel in Model)
+            {
+            <tr>
+                <td>
+                    @eachDistanceViewModel.VetClinicName
+                </td>
+                <td>
+                    @eachDistanceViewModel.VetClinicAddress
+                </td>
+                <td>
+                    @eachDistanceViewModel.DistanceInMiles
+                </td>
+                <td>
+                    @eachDistanceViewModel.DurationInMinutes
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}

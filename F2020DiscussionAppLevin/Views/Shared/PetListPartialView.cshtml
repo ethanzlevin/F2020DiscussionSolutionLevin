@@ -61,7 +61,7 @@
                             @(" Decision Made by : " + eachRequest.DecisionMaker.Fullname)
                         }
 
-                        @if (eachRequest.RequestStatus == "Pending")
+                        @if (eachRequest.RequestStatus == "Pending" && User.IsInRole("Volunteer"))
                         {
                             <a class="btn btn-outline-secondary" asp-controller="VoucherRequest" asp-action="MakeVoucherRequestDecision" asp-route-voucherRequestID="@eachRequest.RequestID" asp-route-requestDecision="Approved">Approve</a>
                             <a class="btn btn-outline-secondary" asp-controller="VoucherRequest" asp-action="MakeVoucherRequestDecision" asp-route-voucherRequestID="@eachRequest.RequestID" asp-route-requestDecision="Denied">Deny</a>
