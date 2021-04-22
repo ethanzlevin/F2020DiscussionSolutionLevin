@@ -38,8 +38,10 @@ namespace F2020DiscussionAppLevin.Models
 
         public List<FundforVoucher> FundsforVoucherRequest { get; set; }
 
+        public int? VetClinicID { get; set; }
 
-
+        [ForeignKey("VetClinicID")]
+        public VetClinic VetClinicForVoucher { get; set; }
 
 
         public VoucherRequest()
@@ -57,6 +59,7 @@ namespace F2020DiscussionAppLevin.Models
             this.RequestAmount = null;
             this.VoucherRedeemed = null;
             this.FundsforVoucherRequest = new List<FundforVoucher>();
+            this.VetClinicID = null;
 
         }
     }

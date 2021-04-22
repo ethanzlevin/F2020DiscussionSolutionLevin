@@ -29,7 +29,7 @@
                 <th>Clinic Address</th>
                 <th>
                     <a class="btn btn-secondary"
-                       asp-controller="VetClinic" asp-action="DetermineDistanceMatrixResult" asp-route-sortOrder="ViewBag.DistanceSortParam">
+                       asp-controller="VetClinic" asp-action="DetermineDistanceMatrixResult" asp-route-sortOrder="@ViewBag.DistanceSortParam">
                        @if(ViewBag.DistanceImage == "descending")
                        {
                        <img src="~/images/DescendingImage.png" width="20" height="20"/>
@@ -40,7 +40,7 @@
                 </th>
                 <th>
                     <a class="btn btn-secondary"
-                       asp-controller="VetClinic" asp-action="DetermineDistanceMatrixResult" asp-route-sortOrder="ViewBag.DurationSortParam">
+                       asp-controller="VetClinic" asp-action="DetermineDistanceMatrixResult" asp-route-sortOrder="@ViewBag.DurationSortParam">
                         @if (ViewBag.DurationImage == "descending")
                         {
                             <img src="~/images/DescendingImage.png" width="20" height="20" />

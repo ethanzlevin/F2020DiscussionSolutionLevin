@@ -102,8 +102,8 @@ namespace F2020DiscussionAppLevin.Controllers
         {
 
             //ternary conditional operator
-            ViewData["DistanceSortParam"] = String.IsNullOrEmpty(sortOrder) ? "distance_desc" : "";
-            ViewData["DurationSortParam"] = sortOrder=="duration" ? "duration_desc" : "duration";
+            ViewData["DistanceSortParam"] = String.IsNullOrEmpty(sortOrder)? "distance_desc" : "";
+            ViewData["DurationSortParam"] = sortOrder=="duration"? "duration_desc" : "duration";
 
             if(clientID != null)
             {
@@ -144,6 +144,15 @@ namespace F2020DiscussionAppLevin.Controllers
 
 
             return View("DetermineDistanceMatrix", distanceMatrix);
+        }
+
+
+        public int FindNearestVetClinic(string clientAddress)
+        {
+            int clinicID = 0;
+            List<DistanceViewModel> distanceMatrix = CreateDistanceMatrix(clientAddress);
+            clinicID = distanceMatrix.OrderBy(d => d.DistanceInMiles).FirstOrDefault().VetClinicID;
+            return clinicID;
         }
 
 

@@ -17,14 +17,19 @@ namespace F2020DiscussionAppLevin.Controllers
 
         private IApplicationUserRepo iApplicationUserRepo;
 
+        private IClientRepo iClientRepo;
+
+        private IVetClinicRepo iVetClinicRepo;
+
 
         // dependancy injection
-        public VoucherRequestController(IPetRepo petRepo, IVoucherRequestRepo voucherRequestRepo, IApplicationUserRepo applicationUserRepo)
+        public VoucherRequestController(IPetRepo petRepo, IVoucherRequestRepo voucherRequestRepo, IApplicationUserRepo applicationUserRepo, IClientRepo clientRepo, IVetClinicRepo vetClinicRepo)
         {
             this.iPetRepo = petRepo;
-            
+            this.iVetClinicRepo = vetClinicRepo;
             this.ivoucherRequestRepo = voucherRequestRepo;
             this.iApplicationUserRepo = applicationUserRepo;
+            this.iClientRepo = clientRepo;
             
         }
 
@@ -39,6 +44,13 @@ namespace F2020DiscussionAppLevin.Controllers
             if (requestDecision == "Approved")
             {
                voucherRequest.RequestAmount = iPetRepo.FindRequestAmount(voucherRequest.PetID);
+                Client client = iClientRepo.FindClient(voucherRequest.RequestForPet.ClientID);
+                string clientAddress = client.Address;
+                VetClinicController vetClinicController = new VetClinicController(iVetClinicRepo, iApplicationUserRepo, iClientRepo);
+
+                
+
+                voucherRequest.VetClinicID = vetClinicController.FindNearestVetClinic(clientAddress);
             }
             ivoucherRequestRepo.MakeRequestDecision(voucherRequest);
 

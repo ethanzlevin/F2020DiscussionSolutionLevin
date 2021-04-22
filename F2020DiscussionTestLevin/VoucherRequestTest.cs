@@ -17,13 +17,16 @@ namespace F2020DiscussionTestLevin
         private VoucherRequestController voucherRequestController;
         private Mock<IVoucherRequestRepo> mockVoucherRequestRepo;
         private Mock<IApplicationUserRepo> mockApplicationUserRepo;
+        private Mock<IClientRepo> mockClientRepo;
+        private Mock<IVetClinicRepo> mockVetClinincRepo;
         public VoucherRequestTest()
         {
             mockPetRepo = new Mock<IPetRepo>();
-            
+            mockClientRepo = new Mock<IClientRepo>();
+            mockVetClinincRepo = new Mock<IVetClinicRepo>();
             mockVoucherRequestRepo = new Mock<IVoucherRequestRepo>();
             mockApplicationUserRepo = new Mock<IApplicationUserRepo>();
-            voucherRequestController = new VoucherRequestController(mockPetRepo.Object, mockVoucherRequestRepo.Object, mockApplicationUserRepo.Object);
+            voucherRequestController = new VoucherRequestController(mockPetRepo.Object, mockVoucherRequestRepo.Object, mockApplicationUserRepo.Object, mockClientRepo.Object, mockVetClinincRepo.Object);
 
 
         }
