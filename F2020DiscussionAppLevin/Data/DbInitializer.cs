@@ -122,10 +122,37 @@ namespace F2020DiscussionAppLevin.Data
                 database.Pet.Add(pet);
                 database.SaveChanges();
             }
+            if (!database.VetClinic.Any())
+            {
+                VetClinic vetClinic = new VetClinic("Paw Prints Veterinary Clinic", "1745 Mileground Rd, Morgantown, WV 26505");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Mountaineer Veterinary Clinic", "239 Green Bag Road, Morgantown, WV 26501");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Hillcrest Veterinary Clinic", "3083 Point Marion Rd, Morgantown, WV 26505");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Brook Valley Veterinary Clinic", "19 Co Rd 79/10, Morgantown, WV 26508");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Alpha Veterinary Services", "2060 Morgantown Rd, Uniontown, PA 15401");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+
+                vetClinic = new VetClinic("Fairmont Veterinary Hospital", "619 Gaston Ave, Fairmont, WV 26554");
+                database.VetClinic.Add(vetClinic);
+                database.SaveChanges();
+            }
 
             if (!database.VoucherRequest.Any())
             {
                 VoucherRequest voucherRequest = new VoucherRequest("Approved", 2);
+                voucherRequest.VetClinicID = 3;
                 database.VoucherRequest.Add(voucherRequest);
                 database.SaveChanges();
 
@@ -139,6 +166,7 @@ namespace F2020DiscussionAppLevin.Data
                 database.SaveChanges();
 
                 voucherRequest = new VoucherRequest("Approved", 3);
+                voucherRequest.VetClinicID = 2;
                 database.VoucherRequest.Add(voucherRequest);
                 database.SaveChanges();
 
@@ -147,6 +175,7 @@ namespace F2020DiscussionAppLevin.Data
                 database.SaveChanges();
 
                 voucherRequest = new VoucherRequest("Approved", 4);
+                voucherRequest.VetClinicID = 1;
                 database.VoucherRequest.Add(voucherRequest);
                 database.SaveChanges();
 
@@ -207,32 +236,7 @@ namespace F2020DiscussionAppLevin.Data
 
 
             }
-            if(!database.VetClinic.Any())
-            {
-                VetClinic vetClinic = new VetClinic("Paw Prints Veterinary Clinic", "1745 Mileground Rd, Morgantown, WV 26505");
-                database.VetClinic.Add(vetClinic);
-                database.SaveChanges();
-
-                vetClinic = new VetClinic("Mountaineer Veterinary Clinic", "239 Green Bag Road, Morgantown, WV 26501");
-                database.VetClinic.Add(vetClinic);
-                database.SaveChanges();
-
-                vetClinic = new VetClinic("Hillcrest Veterinary Clinic", "3083 Point Marion Rd, Morgantown, WV 26505");
-                database.VetClinic.Add(vetClinic);
-                database.SaveChanges();
-
-                vetClinic = new VetClinic("Brook Valley Veterinary Clinic", "19 Co Rd 79/10, Morgantown, WV 26508");
-                database.VetClinic.Add(vetClinic);
-                database.SaveChanges();
-
-                vetClinic = new VetClinic("Alpha Veterinary Services", "2060 Morgantown Rd, Uniontown, PA 15401");
-                database.VetClinic.Add(vetClinic);
-                database.SaveChanges();
-
-                vetClinic = new VetClinic("Fairmont Veterinary Hospital", "619 Gaston Ave, Fairmont, WV 26554");
-                database.VetClinic.Add(vetClinic);
-                database.SaveChanges();
-            }
+           
 
             if (!database.FundforVoucher.Any())
             {

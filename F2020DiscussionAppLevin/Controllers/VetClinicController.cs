@@ -122,21 +122,20 @@ namespace F2020DiscussionAppLevin.Controllers
 
             switch(sortOrder)
             {
-                case "distance_desc": distanceMatrix = distanceMatrix.OrderByDescending(d => d.DistanceInMiles).ToList();  //this whole thing isnt working right now meet with jaren
+                case "distance_desc": distanceMatrix = distanceMatrix.OrderByDescending(d => d.DistanceInMiles).ToList(); 
                     ViewData["DistanceImage"] = "descending";
                     break;
-                case "duration":
+                case "duration": distanceMatrix = distanceMatrix.OrderBy(d => d.DurationInMinutes).ToList();
                     break;
-                case "duration_desc":
-                break;
-
-
+                case "duration_desc": distanceMatrix = distanceMatrix.OrderByDescending(d => d.DurationInMinutes).ToList();
+                    ViewData["DurationImage"] = "descending";
+                    break;
 
                     default: distanceMatrix = distanceMatrix.OrderBy(d => d.DistanceInMiles).ToList();
                     break;
             }
 
-           //distanceMatrix = distanceMatrix.OrderBy(d => d.DistanceInMiles).ToList();
+           
 
             ViewData["ClientInformation"] = "Client " + client.Fullname + " located at " + client.Address;
 

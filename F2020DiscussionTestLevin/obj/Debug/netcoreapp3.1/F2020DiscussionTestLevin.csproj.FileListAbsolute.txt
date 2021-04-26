@@ -557,3 +557,4 @@ C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTes
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\obj\Debug\netcoreapp3.1\F2020DiscussionTestLevin.csproj.CoreCompileInputs.cache
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\GoogleApi.dll
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionTestLevin\bin\Debug\netcoreapp3.1\Data\nyse_listed_stocks_json.json

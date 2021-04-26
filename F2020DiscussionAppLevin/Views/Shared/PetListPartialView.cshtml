@@ -4,6 +4,9 @@
         <thead>
             <tr>
                 <th>
+                    Owner
+                </th>
+                <th>
                     Pet Name
                 </th>
                 <th>
@@ -26,6 +29,7 @@
             @foreach (Pet eachPet in Model)
             {
                 <tr>
+                    <td>@(eachPet.Client.Fullname + " " + eachPet.Client.Address) </td>
                     @if (eachPet.PetName != null)
                     {
                     <td>@eachPet.PetName</td>
@@ -49,15 +53,17 @@
                 <td width="350">
                     @foreach (VoucherRequest eachRequest in eachPet.VoucherRequestForPet)
                     {
-                        @(eachRequest.RequestDate.ToShortDateString()  +" " + eachRequest.RequestStatus)
+                        @(eachRequest.RequestDate.ToShortDateString()  +" " + eachRequest.RequestStatus)<br />
                         @if (eachRequest.RequestStatus == "Approved")
                         {
-                            @(" Amount: $" + eachRequest.RequestAmount)
+                            @(" Amount: $" + eachRequest.RequestAmount)<br />
+                            @("Vet Clinic: " + eachRequest.VetClinicForVoucher.VetClinicName)<br />
+                            @("Address: " + eachRequest.VetClinicForVoucher.VetClinicAddress)<br />
                         }
 
-                        if(eachRequest.VoulenteerID != null)
+                        if (eachRequest.VoulenteerID != null)
                         {
-                            
+
                             @(" Decision Made by : " + eachRequest.DecisionMaker.Fullname)
                         }
 

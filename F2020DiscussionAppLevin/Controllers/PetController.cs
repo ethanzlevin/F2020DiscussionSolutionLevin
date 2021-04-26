@@ -77,7 +77,7 @@ namespace F2020DiscussionAppLevin.Controllers
         {
 
             //Select * from Pets in sql
-            List<Pet> allPets = iPetRepo.ListAllPets(); //database.Pet.Include(p => p.VoucherRequestForPet).ToList();
+            List<Pet> allPets = iPetRepo.ListAllPets(); 
 
             return View(allPets);
         }

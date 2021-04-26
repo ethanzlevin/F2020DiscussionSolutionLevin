@@ -476,3 +476,6 @@ C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionApp
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\F2020DiscussionAppLevin.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\F2020DiscussionAppLevin.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\Razor\Views\VetClinic\DetermineDistanceMatrix.cshtml.g.cs
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\bin\Debug\netcoreapp3.1\Data\nyse_listed_stocks_json.json
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\Razor\Views\Stock\GetStockInformation.cshtml.g.cs
+C:\Users\EthanLevin\source\repos\F2020DiscussionSolutionLevin\F2020DiscussionAppLevin\obj\Debug\netcoreapp3.1\Razor\Views\Address\GetAddressInformation.cshtml.g.cs

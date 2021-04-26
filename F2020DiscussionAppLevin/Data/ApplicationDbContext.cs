@@ -27,6 +27,8 @@ namespace F2020DiscussionAppLevin.Data
 
         public DbSet<FundCriteria> FundCriteria { get; set; }
 
+        public DbSet<Stock> Stock { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
