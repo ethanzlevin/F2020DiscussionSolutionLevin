@@ -190,16 +190,16 @@ namespace F2020DiscussionAppLevin.Data
                 database.Fund.Add(fund);
                 database.SaveChanges();
 
-                fund = new Fund("test2", "test", 100);
+                fund = new Fund("test2", "test", 0);
                 database.Fund.Add(fund);
                 database.SaveChanges();
-                fund = new Fund("test3", "test", 100);
+                fund = new Fund("test3", "test", 2500);
                 database.Fund.Add(fund);
                 database.SaveChanges();
-                fund = new Fund("test4", "test", 100);
+                fund = new Fund("test4", "test", 1200);
                 database.Fund.Add(fund);
                 database.SaveChanges();
-                fund = new Fund("test5", "test", 100);
+                fund = new Fund("test5", "test", 900);
                 database.Fund.Add(fund);
                 database.SaveChanges();
             }
@@ -207,7 +207,7 @@ namespace F2020DiscussionAppLevin.Data
 
             if (!database.FundCriteria.Any())
             {
-                FundCriteria fundCriteria = new FundCriteria(1,"Mon");
+                FundCriteria fundCriteria = new FundCriteria(1,"Mon","Dog","Female","Large");
                 database.FundCriteria.Add(fundCriteria);
                 database.SaveChanges();
 
@@ -216,7 +216,7 @@ namespace F2020DiscussionAppLevin.Data
                 database.Fund.Update(fund);
                 database.SaveChanges();
 
-                fundCriteria = new FundCriteria(2,"Boone");
+                fundCriteria = new FundCriteria(2,"Boone","Cat","Female");
                 database.FundCriteria.Add(fundCriteria);
                 database.SaveChanges();
 
@@ -225,7 +225,7 @@ namespace F2020DiscussionAppLevin.Data
                 database.Fund.Update(fund);
                 database.SaveChanges();
 
-                fundCriteria = new FundCriteria(3,"Mon");
+                fundCriteria = new FundCriteria(3,"Mon","Dog","Male","Small");
                 database.FundCriteria.Add(fundCriteria);
                 database.SaveChanges();
 
@@ -238,21 +238,21 @@ namespace F2020DiscussionAppLevin.Data
             }
            
 
-            if (!database.FundforVoucher.Any())
+            if (!database.FundForVoucher.Any())
             {
-                FundforVoucher fundforVoucher = new FundforVoucher(1,1,10);
-                database.FundforVoucher.Add(fundforVoucher);
+                FundForVoucher fundforVoucher = new FundForVoucher(1,1,10);
+                database.FundForVoucher.Add(fundforVoucher);
                 database.SaveChanges();
 
                
 
 
-                fundforVoucher = new FundforVoucher(2, 2, 10);
-                database.FundforVoucher.Add(fundforVoucher);
+                fundforVoucher = new FundForVoucher(2, 2, 10);
+                database.FundForVoucher.Add(fundforVoucher);
                 database.SaveChanges();
 
-                fundforVoucher = new FundforVoucher(2, 2, 10);
-                database.FundforVoucher.Add(fundforVoucher);
+                fundforVoucher = new FundForVoucher(2, 2, 10);
+                database.FundForVoucher.Add(fundforVoucher);
                 database.SaveChanges();
 
 

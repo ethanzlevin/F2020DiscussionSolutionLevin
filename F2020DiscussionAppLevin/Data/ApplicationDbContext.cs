@@ -23,7 +23,7 @@ namespace F2020DiscussionAppLevin.Data
 
         public DbSet<Fund> Fund { get; set; }
 
-        public DbSet<FundforVoucher> FundforVoucher { get; set; }
+        public DbSet<FundForVoucher> FundForVoucher { get; set; }
 
         public DbSet<FundCriteria> FundCriteria { get; set; }
 

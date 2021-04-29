@@ -23,7 +23,7 @@ namespace F2020DiscussionAppLevin.Models
         public int? FundCriteriaID { get; set; }
 
         //object oriented
-        public List<FundforVoucher> RequestsForFund {get;set;}
+        public List<FundForVoucher> RequestsForFund {get;set;}
 
         [ForeignKey("FundCriteriaID")]
         public FundCriteria FundCriteria { get; set; }
@@ -39,7 +39,7 @@ namespace F2020DiscussionAppLevin.Models
             this.CurrentFundAmount = originalFundAmount;
             this.FundType = fundType;
             this.OriginalFundAmount = originalFundAmount;
-            this.RequestsForFund = new List<FundforVoucher>();
+            this.RequestsForFund = new List<FundForVoucher>();
             this.FundCriteriaID = null;
 
 

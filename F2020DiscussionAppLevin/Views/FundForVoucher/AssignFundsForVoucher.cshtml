@@ -1,0 +1,153 @@
+﻿@model AssignFundsViewModel
+@{
+    ViewData["Title"] = "Assign Funds For Voucher";
+}
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<table>
+    <tr>
+        <td width="50%" valign="top">
+            @if (Model.FundList != null)
+            {
+                if (Model.FundList.Any())
+                {
+                    <table class="table table-bordered table-striped bg-light">
+
+                        <thead>
+                            <tr>
+                                <th>Fund Name</th>
+                                <th>Fund Amount Available</th>
+                                <th>Fund Criteria</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (Fund eachFund in Model.FundList)
+                            {
+                                <tr>
+                                    <td>@eachFund.FundName</td>
+                                    <td>@eachFund.CurrentFundAmount</td>
+
+                                    <td>
+                                        @if (eachFund.FundCriteriaID.HasValue)
+                                        {
+                                            @if (eachFund.FundCriteria.PetType != null)
+                                            {
+                                                @("Pet Type: " + eachFund.FundCriteria.PetType)
+                                            }
+                                            @if (eachFund.FundCriteria.PetGender != null)
+                                            {
+                                                @(", Pet Gender: " + eachFund.FundCriteria.PetGender)
+                                            }
+                                            @if (eachFund.FundCriteria.PetSize != null)
+                                            {
+                                                @(", Pet Size: " + eachFund.FundCriteria.PetSize)
+                                            }
+                                            @if (eachFund.FundCriteria.ClientLocation != null)
+                                            {
+                                                @(" Pet Location : " + eachFund.FundCriteria.ClientLocation)
+                                            }
+                                        }
+                                        else
+                                        {
+                                            @("No fund criteria")
+                                        }
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <h4 class="alert-danger">No funds available</h4>
+                }
+            }
+        </td>
+
+        <td width="50%" valign="top">
+            @if (Model.VoucherRequestList != null)
+            {
+
+                if (Model.VoucherRequestList.Any())
+                {
+                    <table class="table table-bordered table-striped bg-info">
+
+                        <thead>
+                            <tr>
+                                <th>Voucher Request ID</th>
+                                <th>Pet ID</th>
+                                <th>Pet Criteria</th>
+                                <th>Request Amount</th>
+                                <th>Assigned Amount</th>
+                                <th>Client Name</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (VoucherRequest eachVoucherRequest in Model.VoucherRequestList)
+                            {
+                                <tr>
+                                    <td>@eachVoucherRequest.RequestID</td>
+                                    <td>@eachVoucherRequest.PetID</td>
+                                    <td>
+                                        @("Pet Type: " + eachVoucherRequest.RequestForPet.PetType)
+                                        @(", Pet Gender: " + eachVoucherRequest.RequestForPet.PetGender)
+                                        @if (eachVoucherRequest.RequestForPet.PetSize != null)
+                                        {
+                                            @(", Pet Size: " + eachVoucherRequest.RequestForPet.PetSize)
+                                        }
+                                        @(", Pet Location: " + eachVoucherRequest.RequestForPet.Client.Address)
+                                    </td>
+                                    <td>@string.Format("{0:C}", eachVoucherRequest.RequestAmount)</td>
+                                    <td>
+                                        @{ double currentVoucherRequestAmount = 0;}
+                                        @if (eachVoucherRequest.FundsForVoucherRequest.Any())
+                                        {
+                                            @foreach (FundForVoucher eachFundForVoucher in @eachVoucherRequest.FundsForVoucherRequest)
+                                            {
+                                                currentVoucherRequestAmount += @eachFundForVoucher.AmountAssigned;
+                                            }
+                                            @string.Format("{0:C}", currentVoucherRequestAmount)
+                                        }
+                                    </td>
+                                    <td>@eachVoucherRequest.RequestForPet.Client.Fullname</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <h4 class="alert-danger">No Voucher Funds transferred.</h4>
+                }
+            }
+        </td>
+    </tr>
+</table>
+
+<form asp-controller="FundForVoucher" asp-action="AssignFundsForVoucher" method="post">
+
+    <div class="form-group">
+        <label>Choose Fund</label>
+        <select asp-for="FundID" asp-items="@ViewBag.AllFunds" class="form-control">
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Choose Voucher Request</label>
+        <select asp-for="VoucherRequestID" asp-items="@ViewBag.AllVoucherRequests" class="form-control">
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Amount Assigned</label>
+        <input asp-for="AmountAssigned" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Assign Funds</button>
+
+</form>

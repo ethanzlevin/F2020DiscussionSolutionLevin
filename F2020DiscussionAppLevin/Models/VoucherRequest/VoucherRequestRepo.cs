@@ -1,4 +1,5 @@
 ﻿using F2020DiscussionAppLevin.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,15 @@ namespace F2020DiscussionAppLevin.Models
         {
            VoucherRequest voucherRequest = database.VoucherRequest.Find(voucherRequestID);
             return voucherRequest;
+        }
+
+        public List<VoucherRequest> ListAllApprovedVoucherRequests()
+        {
+            List<VoucherRequest> voucherRequests = database.VoucherRequest.Where(vr => vr.RequestStatus == "Approved")
+                .Include(vr => vr.RequestForPet).ThenInclude(p => p.Client)
+                .Include(vr => vr.FundsForVoucherRequest)
+                .ToList();
+            return voucherRequests;
         }
 
         public void MakeRequestDecision(VoucherRequest voucherRequest)

@@ -9,13 +9,13 @@ namespace F2020DiscussionAppLevin.Models
 {
     public class FundCriteria
     {
-        public string ClientLocatoin { get; set; } //counties
+        public string ClientLocation { get; set; } //counties
          [Key]
         public int FundCriteriaID { get; set; }
 
         public string PetGender { get; set; }
 
-        public string Petsize { get; set; }
+        public string PetSize { get; set; }
 
         public string PetType { get; set; }
 
@@ -30,8 +30,8 @@ namespace F2020DiscussionAppLevin.Models
 
             this.PetType = petType;
             this.PetGender = petGender;
-            this.Petsize = petSize;
-            this.ClientLocatoin = clientLocation;
+            this.PetSize = petSize;
+            this.ClientLocation = clientLocation;
 
 
         }

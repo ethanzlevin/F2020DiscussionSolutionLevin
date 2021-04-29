@@ -36,7 +36,7 @@ namespace F2020DiscussionAppLevin.Models
         public Pet RequestForPet { get; set; }
 
 
-        public List<FundforVoucher> FundsforVoucherRequest { get; set; }
+        public List<FundForVoucher> FundsForVoucherRequest { get; set; }
 
         public int? VetClinicID { get; set; }
 
@@ -58,7 +58,7 @@ namespace F2020DiscussionAppLevin.Models
             this.DecisionDate = null;
             this.RequestAmount = null;
             this.VoucherRedeemed = null;
-            this.FundsforVoucherRequest = new List<FundforVoucher>();
+            this.FundsForVoucherRequest = new List<FundForVoucher>();
             this.VetClinicID = null;
 
         }

@@ -10,5 +10,7 @@ namespace F2020DiscussionAppLevin.Models
         void AddVoucherRequest(VoucherRequest voucherRequest);
         VoucherRequest FindVoucherRequest(int? voucherRequestID);
         void MakeRequestDecision(VoucherRequest voucherRequest);
+        List<VoucherRequest> ListAllApprovedVoucherRequests();
+
     }
 }
