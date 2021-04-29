@@ -9,6 +9,7 @@ using F2020DiscussionAppLevin.Models;
 
 namespace F2020DiscussionAppLevin.Controllers
 {
+    //https://f2020discussionapplevin.azurewebsites.net
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

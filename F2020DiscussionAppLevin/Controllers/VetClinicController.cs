@@ -1,4 +1,5 @@
 ﻿using F2020DiscussionAppLevin.Models;
+using F2020DiscussionAppLevin.Services;
 using GoogleApi.Entities.Common;
 using GoogleApi.Entities.Maps.DistanceMatrix.Request;
 using GoogleApi.Entities.Maps.DistanceMatrix.Response;
@@ -118,9 +119,23 @@ namespace F2020DiscussionAppLevin.Controllers
 
             string clientAddress = client.Address;
 
-           List<DistanceViewModel> distanceMatrix = CreateDistanceMatrix(clientAddress);
+            List<DistanceViewModel> distanceMatrix;
 
-            switch(sortOrder)
+            if (clientID != null)
+            {
+                distanceMatrix = CreateDistanceMatrix(clientAddress);
+                HttpContext.Session.SetComplexData("DistanceMatrix", distanceMatrix);
+            }
+            else
+            {
+
+                distanceMatrix = HttpContext.Session.GetComplexData<List<DistanceViewModel>>("DistanceMatrix");
+            }
+
+
+
+
+            switch (sortOrder)
             {
                 case "distance_desc": distanceMatrix = distanceMatrix.OrderByDescending(d => d.DistanceInMiles).ToList(); 
                     ViewData["DistanceImage"] = "descending";
